@@ -1,0 +1,39 @@
+{
+  "name": "next-starter-project",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tslint -p .",
+    "lint:fix": "tslint --fix -p ."
+  },
+  "dependencies": {
+    "next": "^9.0.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.2",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.3",
+    "now": "^16.1.2",
+    "prettier": "^1.18.2",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.5.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{components,pages}/**/*.{js,jsx,ts,tsx,json}": [
+      "tslint --fix",
+      "git add"
+    ]
+  }
+}
