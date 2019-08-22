@@ -1,4 +1,5 @@
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
+const path = require("path");
 
 const nextConfig = {
   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
@@ -13,7 +14,12 @@ const nextConfig = {
       reportFilename: "bundles/client.html"
     }
   },
-  webpack: config => {
+  webpack: (config) => {
+    config.resolve.modules = [
+      path.resolve('./node_modules'),
+      path.resolve('.')
+    ];
+
     // Fixes npm packages that depend on `fs` module
     config.node = {
       fs: "empty"
