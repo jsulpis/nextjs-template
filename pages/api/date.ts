@@ -1,6 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiResponse } from "next";
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+export default (res: NextApiResponse) => {
   const date = new Date()
     .toISOString()
     .replace(/T/, " ")
