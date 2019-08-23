@@ -1,4 +1,5 @@
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
+const withSass = require("@zeit/next-sass");
 const path = require("path");
 
 const nextConfig = {
@@ -14,10 +15,15 @@ const nextConfig = {
       reportFilename: "bundles/client.html"
     }
   },
-  webpack: (config) => {
+  cssModules: true,
+  cssLoaderOptions: {
+    importLoaders: 1,
+    localIdentName: "[local]-[hash:base64:8]"
+  },
+  webpack: config => {
     config.resolve.modules = [
-      path.resolve('./node_modules'),
-      path.resolve('.')
+      path.resolve("./node_modules"),
+      path.resolve(".")
     ];
 
     // Fixes npm packages that depend on `fs` module
@@ -29,4 +35,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = withSass(withBundleAnalyzer(nextConfig));
