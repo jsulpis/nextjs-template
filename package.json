@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "tslint -p .",
     "lint:fix": "tslint --fix -p .",
