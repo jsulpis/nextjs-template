@@ -1,35 +1,35 @@
 import Page from "components/Page";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import fetchDate from "../lib/fetchDate";
 
-const HomePage = () => {
-  const [date, setDate] = useState(null);
+interface HomePageState {
+  date: string;
+}
 
-  useEffect(() => {
-    async function getDate() {
-      const res = await fetch("/api/date");
-      const newDate = await res.json();
-      setDate(newDate);
-    }
-    getDate();
-  }, []);
+class HomePage extends React.Component<any, HomePageState> {
+  constructor(props) {
+    super(props);
+    this.state = { date: null };
+  }
 
-  return (
-    <Page title={"Home"} description={"This is the home page"}>
-      <div className="hero">
-        <h1 className="title">Welcome to Next!</h1>
-        <p className="row date">
-          The date is:&nbsp;{" "}
-          {date ? (
-            <span>
-              <b>{date.date}</b>
-            </span>
-          ) : (
-            <span className="loading" />
-          )}
-        </p>
-      </div>
+  public async componentDidMount() {
+    const date = await fetchDate();
+    this.setState({ date });
+  }
 
-      <style jsx>{`
+  public render() {
+    const date = this.state.date;
+    return (
+      <Page title={"Home"} description={"This is the home page"}>
+        <div className="hero">
+          <h1 className="title">Welcome to Next!</h1>
+          <p className="row date">
+            The date is:&nbsp;
+            {date ? <b>{date}</b> : <span className="loading" />}
+          </p>
+        </div>
+
+        <style jsx>{`
         .hero {
           width: 100%;
           color: #333;
@@ -83,8 +83,9 @@ const HomePage = () => {
           animation: Loading 2s ease infinite;
         }
       `}</style>
-    </Page>
-  );
-};
+      </Page>
+    );
+  }
+}
 
 export default HomePage;

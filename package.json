@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "tslint -p .",
     "lint:fix": "tslint --fix -p .",
@@ -13,6 +14,7 @@
     "analyze:browser": "BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
@@ -28,6 +30,7 @@
     "babel-core": "^6.26.3",
     "babel-jest": "^24.9.0",
     "husky": "^3.0.4",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.3",
     "node-sass": "^4.12.0",
