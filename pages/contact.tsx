@@ -7,7 +7,7 @@ interface ContactPageState {
   message: string;
 }
 
-class ContactPage extends Component<null, ContactPageState> {
+class ContactPage extends Component<any, ContactPageState> {
   public state = { message: "" };
 
   public handleInput = e => {
