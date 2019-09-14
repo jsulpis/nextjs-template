@@ -1,9 +1,9 @@
 import { render, wait } from "@testing-library/react";
-import fetchDate from "lib/fetchDate";
+import apiGet from "lib/apiGet";
 import HomePage from "pages";
 import React from "react";
 
-jest.mock("lib/fetchDate");
+jest.mock("lib/apiGet");
 
 describe("With React Testing Library", () => {
   it('Shows "Welcome to Next!"', () => {
@@ -17,10 +17,10 @@ describe("With React Testing Library", () => {
   it("should display the date", async () => {
     const MOCK_DATE = "2019-08-27 20:44:46";
     // @ts-ignore
-    fetchDate.mockResolvedValueOnce(MOCK_DATE);
+    apiGet.mockResolvedValueOnce({ date: MOCK_DATE });
     const { container } = render(<HomePage />);
 
-    expect(fetchDate).toHaveBeenCalled();
+    expect(apiGet).toHaveBeenCalled();
     await wait(() => expect(container.querySelector(".loading")).toBeFalsy());
 
     expect(container.querySelector(".date").textContent).toBe(

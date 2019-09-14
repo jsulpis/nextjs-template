@@ -1,5 +1,5 @@
 import Page from "components/Page";
-import fetchDate from "lib/fetchDate";
+import apiGet from "lib/apiGet";
 import React from "react";
 
 interface HomePageState {
@@ -13,8 +13,9 @@ class HomePage extends React.Component<any, HomePageState> {
   }
 
   public async componentDidMount() {
-    const date = await fetchDate();
-    this.setState({ date });
+    type DateObject = HomePageState;
+    const date = await apiGet<DateObject>("/date");
+    this.setState(date);
   }
 
   public render() {
