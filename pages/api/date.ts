@@ -1,7 +1,7 @@
 import { NextApiResponse } from "next";
 
 export default (_, res: NextApiResponse) => {
-  const date = new Date()
+  const date = new Date(global.Date.now())
     .toISOString()
     .replace(/T/, " ")
     .replace(/\..+/, "");
