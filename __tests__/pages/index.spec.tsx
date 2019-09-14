@@ -1,6 +1,6 @@
 import { render, wait } from "@testing-library/react";
 import fetchDate from "lib/fetchDate";
-import HomePage from "pages/index";
+import HomePage from "pages";
 import React from "react";
 
 jest.mock("lib/fetchDate");
