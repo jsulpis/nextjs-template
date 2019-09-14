@@ -1,4 +1,4 @@
-import dateApi from "../date";
+import dateApi from "pages/api/date";
 
 class MockNextApiResponse {
   public statusCode: number;

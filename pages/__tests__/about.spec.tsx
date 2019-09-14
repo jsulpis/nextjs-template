@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
+import AboutPage from "pages/about";
 import React from "react";
-import AboutPage from "../about";
 
 describe("With React Testing Library", () => {
   it('Shows "This is the About page"', () => {
