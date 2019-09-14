@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { triggerAnalyticsEvent } from "lib/gtag";
+import ContactPage from "pages/contact";
 import React from "react";
-import ContactPage from "../contact";
 
 jest.mock("lib/gtag");
 

@@ -1,6 +1,6 @@
 import Page from "components/Page";
+import fetchDate from "lib/fetchDate";
 import React from "react";
-import fetchDate from "../lib/fetchDate";
 
 interface HomePageState {
   date: string;

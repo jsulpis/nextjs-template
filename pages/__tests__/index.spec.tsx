@@ -1,9 +1,9 @@
 import { render, wait } from "@testing-library/react";
+import fetchDate from "lib/fetchDate";
+import HomePage from "pages/index";
 import React from "react";
-import fetchDate from "../../lib/fetchDate";
-import HomePage from "../index";
 
-jest.mock("../../lib/fetchDate");
+jest.mock("lib/fetchDate");
 
 describe("With React Testing Library", () => {
   it('Shows "Welcome to Next!"', () => {
