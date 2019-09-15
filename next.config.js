@@ -3,7 +3,17 @@ const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withSass = require("@zeit/next-sass");
 const path = require("path");
 
+const variables = {
+  development: {
+    ROOT_URL: "http://localhost:3000"
+  },
+  production: {
+    ROOT_URL: process.env.NOW_URL
+  }
+};
+
 const nextConfig = {
+  env: variables[process.env.NODE_ENV || "development"],
   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
   analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
   bundleAnalyzerConfig: {
@@ -38,7 +48,6 @@ const nextConfig = {
     config.node = {
       fs: "empty"
     };
-
     return config;
   }
 };

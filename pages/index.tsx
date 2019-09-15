@@ -2,24 +2,17 @@ import Page from "components/Page";
 import apiGet from "lib/apiGet";
 import React from "react";
 
-interface HomePageState {
+interface HomePageProps {
   date: string;
 }
 
-class HomePage extends React.Component<any, HomePageState> {
-  constructor(props) {
-    super(props);
-    this.state = { date: null };
-  }
-
-  public async componentDidMount() {
-    type DateObject = HomePageState;
-    const date = await apiGet<DateObject>("/date");
-    this.setState(date);
+class HomePage extends React.Component<HomePageProps, any> {
+  public static async getInitialProps() {
+    return await apiGet<HomePageProps>("/date");
   }
 
   public render() {
-    const date = this.state.date;
+    const date = this.props.date;
     return (
       <Page title={"Home"} description={"This is the home page"}>
         <div className="hero">

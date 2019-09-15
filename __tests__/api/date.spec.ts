@@ -1,18 +1,5 @@
+import MockNextApiResponse from "__tests__/api/MockNextApiResponse";
 import dateApi from "pages/api/date";
-
-class MockNextApiResponse {
-  public statusCode: number;
-  public body: object;
-
-  public status(statusCode: number) {
-    this.statusCode = statusCode;
-    return this;
-  }
-
-  public json(body: object) {
-    this.body = body;
-  }
-}
 
 describe("Date api", () => {
   let dateNowSpy;
