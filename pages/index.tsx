@@ -7,6 +7,41 @@ interface HomePageProps {
   date: string;
 }
 
+const Card = ({ href, title, details }) => {
+  return (
+    <>
+      <a className="card" href={href}>
+        <h3>{title} &rarr;</h3>
+        <p>{details}</p>
+      </a>
+      <style jsx>{`
+        .card {
+          padding: 18px 18px 24px;
+          width: 220px;
+          text-align: left;
+          text-decoration: none;
+          color: #434343;
+          border: 1px solid #9b9b9b;
+        }
+        .card:hover {
+          border-color: #067df7;
+        }
+        .card h3 {
+          margin: 0;
+          color: #067df7;
+          font-size: 18px;
+        }
+        .card p {
+          margin: 0;
+          padding: 12px 0 0;
+          font-size: 13px;
+          color: #333;
+        }
+      `}</style>
+    </>
+  );
+};
+
 class HomePage extends React.Component<HomePageProps, any> {
   public static async getInitialProps() {
     // If client, call the API. If server-side rendered, call the function directly.
@@ -25,6 +60,24 @@ class HomePage extends React.Component<HomePageProps, any> {
             The date is:&nbsp;
             {date ? <b>{date}</b> : <span className="loading" />}
           </p>
+        </div>
+
+        <div className="row">
+          <Card
+            title="Getting Started"
+            details="Learn more about Next.js on GitHub and in their examples."
+            href="https://github.com/zeit/next.js#setup"
+          />
+          <Card
+            title="Examples"
+            details="Find other example boilerplates on the Next.js GitHub"
+            href="https://github.com/zeit/next.js/tree/master/examples"
+          />
+          <Card
+            title="Create Next App"
+            details="Was this tool helpful? Let us know how we can improve it!"
+            href="https://github.com/zeit/next.js"
+          />
         </div>
 
         <style jsx>{`
@@ -66,7 +119,7 @@ class HomePage extends React.Component<HomePageProps, any> {
           width: 176px;
           text-align: center;
         }
-        @keyframes Loading { 
+        @keyframes Loading {
           0%{background-position:0% 50%}
           50%{background-position:100% 50%}
           100%{background-position:0% 50%}
