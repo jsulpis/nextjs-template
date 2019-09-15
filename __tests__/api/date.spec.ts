@@ -1,41 +1,24 @@
+import MockNextApiResponse from "__tests__/api/MockNextApiResponse";
+import getCurrentDateTime from "infrastructure/date";
 import dateApi from "pages/api/date";
 
-class MockNextApiResponse {
-  public statusCode: number;
-  public body: object;
-
-  public status(statusCode: number) {
-    this.statusCode = statusCode;
-    return this;
-  }
-
-  public json(body: object) {
-    this.body = body;
-  }
-}
+jest.mock("infrastructure/date");
 
 describe("Date api", () => {
-  let dateNowSpy;
-
-  beforeAll(() => {
-    // Lock Time
-    dateNowSpy = jest
-      .spyOn(global.Date, "now")
-      .mockImplementation(() => +new Date("2019-09-14T12:13:14Z"));
-  });
-
-  afterAll(() => {
-    // Unlock Time
-    dateNowSpy.mockRestore();
-  });
-
   it("should return a date", () => {
+    // Given
+    const MOCK_DATE = "2019-09-14 12:13:14";
+    (getCurrentDateTime as jest.Mock).mockImplementation(() => MOCK_DATE);
+
     const res = new MockNextApiResponse();
 
+    // When
     // @ts-ignore
     dateApi(null, res);
 
+    // Then
+    expect(getCurrentDateTime).toHaveBeenCalled();
     expect(res.statusCode).toBe(200);
-    expect(res.body).toEqual({ date: "2019-09-14 12:13:14" });
+    expect(res.body).toEqual({ date: MOCK_DATE });
   });
 });

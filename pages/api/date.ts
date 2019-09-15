@@ -1,10 +1,8 @@
+import getCurrentDateTime from "infrastructure/date";
 import { NextApiResponse } from "next";
 
 export default (_, res: NextApiResponse) => {
-  const date = new Date(global.Date.now())
-    .toISOString()
-    .replace(/T/, " ")
-    .replace(/\..+/, "");
+  const date = getCurrentDateTime();
 
   res.status(200).json({ date });
 };
