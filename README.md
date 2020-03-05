@@ -25,7 +25,7 @@ This template is a mix of several examples from the [next.js GitHub repository](
 
 **TypeScript**
 
--  Leverage the power of Typescript in all your source code
+- Leverage the power of Typescript in all your source code
 
 **Linting**
 
@@ -52,8 +52,6 @@ This template is a mix of several examples from the [next.js GitHub repository](
 - Deploy this application to now.sh using one single command (see 'deployment' section below)
 - Google global site tag (gtag.js) for sending data to Google Analytics
 
-
-
 ## Installation
 
 ### Install
@@ -66,11 +64,10 @@ cd next-starter-project
 ```
 
 then install all the dependencies:
+
 ```shell
 npm install
 ```
-
-
 
 ## Usage
 
@@ -85,12 +82,14 @@ npm run dev
 ### Build
 
 Build for production and launch server. Your application is then served with server-side rendering (SSR).
+
 ```shell
 npm run build
 npm start
 ```
 
 Or generate a static project with pre-rendered pages to put directly on your server (or any static website hosting platform, like GitHub Pages). This is better for SEO as the Time To First Byte is lower than with SSR.
+
 ```shell
 npm run export
 ```
@@ -111,8 +110,6 @@ This command will build the application, upload the build and deploy it on a sta
 
 Or you can also integrate now.sh with your GitHub account, which will allow it to deploy each branch and pull request to their own environment, and the master branch in production.
 
-
-
 ## Contributing
 
 Contributions are welcome ! If you improve this template, feel free to share it.
@@ -124,9 +121,6 @@ Contributions are welcome ! If you improve this template, feel free to share it.
 5. Push your branch (`git push origin feature/awesomeFeature`)
 6. Open a new Pull Request
 
-
-
 ## License
 
 Released under the [MIT](https://github.com/jsulpis/next-starter-project/blob/master/LICENSE) license.
-

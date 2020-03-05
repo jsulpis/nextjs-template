@@ -5,8 +5,8 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "lint": "tslint -p .",
-    "lint:fix": "tslint --fix -p .",
+    "lint": "prettier --check **/*.{js,ts,tsx,json,md,yml}",
+    "lint:fix": "prettier --write **/*.{js,ts,tsx,json,md,yml}",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "analyze": "BUNDLE_ANALYZE=both next build",
@@ -32,25 +32,16 @@
     "husky": "^3.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
-    "lint-staged": "^9.2.3",
     "node-sass": "^4.12.0",
     "now": "^16.1.2",
     "prettier": "^1.18.2",
+    "pretty-quick": "^2.0.1",
     "styled-jsx-plugin-sass": "^1.0.0",
-    "tslint": "^5.19.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged"
     }
-  },
-  "lint-staged": {
-    "{components,pages}/**/*.{js,jsx,ts,tsx,json}": [
-      "tslint --fix",
-      "git add"
-    ]
   }
 }
