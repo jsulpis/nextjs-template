@@ -15,9 +15,7 @@ describe("With React Testing Library", () => {
   it('Shows "Welcome to Next!"', () => {
     const { container } = render(<HomePage date={""} />);
 
-    expect(container.querySelector(".title").textContent).toBe(
-      "Welcome to Next!"
-    );
+    expect(container.querySelector(".title").textContent).toBe("Welcome to Next!");
   });
 
   it("should display the date", async () => {

@@ -29,10 +29,7 @@ const nextConfig = {
     };
   },
   webpack: config => {
-    config.resolve.modules = [
-      path.resolve("./node_modules"),
-      path.resolve(".")
-    ];
+    config.resolve.modules = [path.resolve("./node_modules"), path.resolve(".")];
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
     // Fixes npm packages that depend on `fs` module
     config.node = {
