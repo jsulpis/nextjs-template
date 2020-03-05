@@ -1,4 +1,4 @@
-name: Node.js CI
+name: CI
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -17,7 +18,7 @@ jobs:
     steps:
       - name: Setup Git for Windows
         if: matrix.os == 'windows-latest'
-        run: git config --global core.autocrlf false # don't convert LF line ends to CRLF on Windows
+        run: git config --global core.autocrlf false # don't convert LF line ends to CRLF on Windows (for the linter)
 
       - uses: actions/checkout@v2
 
@@ -49,3 +50,36 @@ jobs:
 
         env:
           CI: true
+
+  analysis:
+    name: SonarCloud Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
+          key: ubuntu-latest-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ubuntu-latest-node-
+            ubuntu-latest-
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Generate test coverage report
+        run: npm run test:coverage
+
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
