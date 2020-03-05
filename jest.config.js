@@ -11,7 +11,7 @@ module.exports = {
     "!pages/_app.tsx",
     "!pages/_document.tsx"
   ],
-  moduleNameMapper:{
+  moduleNameMapper: {
     "\\.(css|less|scss|sass)$": "identity-obj-proxy"
   }
 };

@@ -1,6 +1,10 @@
 name: Node.js CI
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   build:
@@ -13,14 +17,14 @@ jobs:
     steps:
       - name: Setup Git for Windows
         if: matrix.os == 'windows-latest'
-        run: git config --global core.autocrlf true
+        run: git config --global core.autocrlf false # don't convert LF line ends to CRLF on Windows
 
       - uses: actions/checkout@v2
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: "12.x"
 
       - name: Cache Node.js modules
         uses: actions/cache@v1
