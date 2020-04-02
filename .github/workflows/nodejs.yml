@@ -9,17 +9,9 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Setup Git for Windows
-        if: matrix.os == 'windows-latest'
-        run: git config --global core.autocrlf false # don't convert LF line ends to CRLF on Windows (for the linter)
-
       - uses: actions/checkout@v2
 
       - name: Setup Node.js
@@ -27,17 +19,8 @@ jobs:
         with:
           node-version: "12.x"
 
-      - name: Cache Node.js modules
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.OS }}-node-
-            ${{ runner.OS }}-
-
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Lint
         run: npm run lint
@@ -45,37 +28,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Test
-        run: npm test
-
-        env:
-          CI: true
-
-  analysis:
-    name: SonarCloud Analysis
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@master
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "12.x"
-
-      - name: Cache Node.js modules
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm # npm cache files are stored in `~/.npm` on Linux/macOS
-          key: ubuntu-latest-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ubuntu-latest-node-
-            ubuntu-latest-
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Generate test coverage report
+      - name: Test with coverage report
         run: npm run test:coverage
 
       - name: SonarCloud Scan
@@ -83,3 +36,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          CI: true
