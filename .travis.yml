@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "8"
+  - lts/*
 
 dist: trusty
 
@@ -9,9 +9,7 @@ addons:
     organization: "jsulpis-github"
     token: $SONAR_TOKEN
 
-cache:
-  directories:
-    - node_modules
+cache: npm
 
 script:
   - npm run lint
