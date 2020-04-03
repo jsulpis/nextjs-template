@@ -4,7 +4,7 @@ import React from "react";
 const defaultDescription = "Full-featured template for next.js applications.";
 const defaultOGURL = "";
 const defaultOGImage = defaultOGURL + "/static/image.png";
-const defaultTitle = "Next Starter Project";
+const defaultTitle = process.env.APP_TITLE;
 
 export interface HeadProps {
   description?: string;

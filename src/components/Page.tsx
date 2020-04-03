@@ -11,14 +11,6 @@ const Page = (props: PageProps) => (
     <Head {...props} />
     <Header />
     {props.children}
-    <style global jsx>
-      {`
-        body {
-          text-align: center;
-          font-family: Segoe UI, Helvetica, Arial, sans-serif;
-        }
-      `}
-    </style>
   </div>
 );
 
