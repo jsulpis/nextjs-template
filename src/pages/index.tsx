@@ -1,5 +1,5 @@
 import Page from "components/Page";
-import getCurrentDateTime from "infrastructure/date";
+import getCurrentDateTime from "infrastructure/getCurrentDateTime";
 import apiGet from "lib/apiGet";
 import React from "react";
 

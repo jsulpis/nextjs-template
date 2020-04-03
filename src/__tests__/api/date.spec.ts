@@ -1,8 +1,8 @@
 import MockNextApiResponse from "./MockNextApiResponse";
-import getCurrentDateTime from "infrastructure/date";
+import getCurrentDateTime from "infrastructure/getCurrentDateTime";
 import dateApi from "pages/api/date";
 
-jest.mock("infrastructure/date");
+jest.mock("infrastructure/getCurrentDateTime");
 
 describe("Date api", () => {
   it("should return a date", () => {
