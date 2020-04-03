@@ -1,5 +1,5 @@
 import Page from "components/Page";
-import getCurrentDateTime from "infrastructure/date";
+import getCurrentDateTime from "infrastructure/getCurrentDateTime";
 import apiGet from "lib/apiGet";
 import React from "react";
 
@@ -53,7 +53,7 @@ class HomePage extends React.Component<HomePageProps, any> {
   public render() {
     const date = this.props.date;
     return (
-      <Page title={"Home"} description={"This is the home page"}>
+      <Page>
         <div className="hero">
           <h1 className="title">Welcome to Next!</h1>
           <p className="row date">

@@ -1,6 +1,9 @@
+require("dotenv").config();
 const webpack = require("webpack");
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withSass = require("@zeit/next-sass");
+const withCSS = require("@zeit/next-css");
+const withFonts = require("next-fonts");
 const path = require("path");
 
 const nextConfig = {
@@ -21,15 +24,19 @@ const nextConfig = {
     importLoaders: 1,
     localIdentName: "[local]-[hash:base64:8]"
   },
-  exportPathMap: function() {
+  exportPathMap: function () {
     return {
       "/": { page: "/" },
-      about: { page: "/about" },
-      contact: { page: "/contact" }
+      about: {
+        page: "/about"
+      },
+      contact: {
+        page: "/contact"
+      }
     };
   },
   webpack: config => {
-    config.resolve.modules = [path.resolve("./node_modules"), path.resolve(".")];
+    config.resolve.modules = [path.resolve("./node_modules"), path.resolve("src")];
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
     // Fixes npm packages that depend on `fs` module
     config.node = {
@@ -40,4 +47,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withSass(withBundleAnalyzer(nextConfig));
+module.exports = withSass(withCSS(withFonts(withBundleAnalyzer(nextConfig))));

@@ -1,4 +1,4 @@
-import getCurrentDateTime from "infrastructure/date";
+import getCurrentDateTime from "infrastructure/getCurrentDateTime";
 
 describe("Date api", () => {
   let dateNowSpy;

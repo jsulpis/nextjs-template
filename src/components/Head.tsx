@@ -1,29 +1,27 @@
 import NextHead from "next/head";
 import React from "react";
 
-const defaultDescription = "";
+const defaultDescription = "Full-featured template for next.js applications.";
 const defaultOGURL = "";
-const defaultOGImage = "";
+const defaultOGImage = defaultOGURL + "/static/image.png";
+const defaultTitle = "Next Starter Project";
 
 export interface HeadProps {
   description?: string;
   ogImage?: string;
-  title: string;
+  title?: string;
   url?: string;
 }
 
 const Head = (props: HeadProps) => (
   <NextHead>
     <meta charSet="UTF-8" />
-    <title>{props.title || ""}</title>
+    <title>{props.title || defaultTitle}</title>
     <meta name="description" content={props.description || defaultDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
-    <link rel="apple-touch-icon" href="/static/touch-icon.png" />
-    <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
-    <link rel="icon" href="/staticicon.ico" />
+    <link rel="icon" href="/static/favicon.ico" />
     <meta property="og:url" content={props.url || defaultOGURL} />
-    <meta property="og:title" content={props.title || ""} />
+    <meta property="og:title" content={props.title || defaultTitle} />
     <meta property="og:description" content={props.description || defaultDescription} />
     <meta name="twitter:site" content={props.url || defaultOGURL} />
     <meta name="twitter:card" content="summary_large_image" />

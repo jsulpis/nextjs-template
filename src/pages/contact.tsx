@@ -6,7 +6,7 @@ interface ContactPageState {
   message: string;
 }
 
-class ContactPage extends React.Component<any, ContactPageState> {
+class Contact extends React.Component<any, ContactPageState> {
   constructor(props) {
     super(props);
     this.state = { message: "" };
@@ -68,4 +68,4 @@ class ContactPage extends React.Component<any, ContactPageState> {
   }
 }
 
-export default ContactPage;
+export default Contact;
