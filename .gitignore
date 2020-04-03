@@ -9,8 +9,8 @@
 # production
 /build
 /dist
-/.next
-/out
+src/.next
+src/out
 /.now
 
 # misc

@@ -1,4 +1,4 @@
-import MockNextApiResponse from "__tests__/api/MockNextApiResponse";
+import MockNextApiResponse from "./MockNextApiResponse";
 import getCurrentDateTime from "infrastructure/date";
 import dateApi from "pages/api/date";
 

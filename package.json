@@ -1,18 +1,18 @@
 {
   "name": "next-starter-project",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "export": "next export",
-    "start": "next start",
-    "lint": "prettier --check **/*.{js,ts,tsx,json,md,yml}",
-    "lint:fix": "prettier --write **/*.{js,ts,tsx,json,md,yml}",
+    "dev": "next src",
+    "build": "next build src",
+    "export": "next export src",
+    "start": "next start src",
+    "lint": "prettier --check src/**/*.{js,ts,tsx,json,md,yml}",
+    "lint:fix": "prettier --write src/**/*.{js,ts,tsx,json,md,yml}",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "analyze": "BUNDLE_ANALYZE=both next build",
-    "analyze:server": "BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "BUNDLE_ANALYZE=browser next build"
+    "analyze": "BUNDLE_ANALYZE=both next build src",
+    "analyze:server": "BUNDLE_ANALYZE=server next build src",
+    "analyze:browser": "BUNDLE_ANALYZE=browser next build src"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
