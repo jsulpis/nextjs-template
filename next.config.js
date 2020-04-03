@@ -1,6 +1,9 @@
+require("dotenv").config();
 const webpack = require("webpack");
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withSass = require("@zeit/next-sass");
+const withCSS = require("@zeit/next-css");
+const withFonts = require("next-fonts");
 const path = require("path");
 
 const nextConfig = {
@@ -40,4 +43,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withSass(withBundleAnalyzer(nextConfig));
+module.exports = withSass(withCSS(withFonts(withBundleAnalyzer(nextConfig))));
