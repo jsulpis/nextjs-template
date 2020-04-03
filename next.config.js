@@ -24,11 +24,15 @@ const nextConfig = {
     importLoaders: 1,
     localIdentName: "[local]-[hash:base64:8]"
   },
-  exportPathMap: function() {
+  exportPathMap: function () {
     return {
       "/": { page: "/" },
-      about: { page: "/about" },
-      contact: { page: "/contact" }
+      about: {
+        page: "/about"
+      },
+      contact: {
+        page: "/contact"
+      }
     };
   },
   webpack: config => {
