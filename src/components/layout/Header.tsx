@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const routes = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/docs", label: "Documentation" },
   { href: "/contact", label: "Contact" }
 ];
 

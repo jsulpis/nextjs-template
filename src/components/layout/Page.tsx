@@ -1,5 +1,5 @@
-import Head, { HeadProps } from "components/Head";
-import Header from "components/Header";
+import Head, { HeadProps } from "components/layout/Head";
+import Header from "components/layout/Header";
 import React, { ReactNode } from "react";
 
 export interface PageProps extends HeadProps {

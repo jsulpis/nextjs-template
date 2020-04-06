@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Icon from "components/Icon";
+import Icon from "components/base/Icon";
 
 describe("Icon", () => {
   it("should display an image with alt text and a title", () => {

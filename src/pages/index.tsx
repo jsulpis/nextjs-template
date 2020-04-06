@@ -1,6 +1,7 @@
 import React from "react";
-import Page from "components/Page";
-import Icon from "components/Icon";
+import Page from "components/layout/Page";
+import Icon from "components/base/Icon";
+import LinkButton from "components/base/LinkButton";
 
 const icons = [
   { name: "React.js", file: "react-icon.svg" },
@@ -37,6 +38,14 @@ function HomePage() {
             {icons.map(icon => (
               <Icon className="mx-2 my-2" icon={icon} key={icon.file} />
             ))}
+          </div>
+          <div className="text-white mt-10 text-sm">
+            <LinkButton color="blue" href="/docs">
+              Get Started
+            </LinkButton>
+            <LinkButton href="https://github.com/jsulpis/next-starter-project">
+              Star on GitHub
+            </LinkButton>
           </div>
         </div>
       </main>

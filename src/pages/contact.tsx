@@ -1,4 +1,4 @@
-import Page from "components/Page";
+import Page from "components/layout/Page";
 import { triggerAnalyticsEvent } from "lib/gtag";
 import React from "react";
 
