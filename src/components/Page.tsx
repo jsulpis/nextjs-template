@@ -7,10 +7,10 @@ export interface PageProps extends HeadProps {
 }
 
 const Page = (props: PageProps) => (
-  <div>
+  <div className="h-full">
     <Head {...props} />
     <Header />
-    {props.children}
+    <div className="container h-full pt-16 mx-auto px-3">{props.children}</div>
   </div>
 );
 

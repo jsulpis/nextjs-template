@@ -1,148 +1,47 @@
-import Page from "components/Page";
-import getCurrentDateTime from "infrastructure/getCurrentDateTime";
-import apiGet from "lib/apiGet";
 import React from "react";
+import Page from "components/Page";
+import Icon from "components/Icon";
 
-interface HomePageProps {
-  date: string;
-}
+const icons = [
+  { name: "React.js", file: "react-icon.svg" },
+  { name: "Typescript", file: "typescript-icon.svg" },
+  { name: "Jest", file: "jest-icon.svg" },
+  { name: "Prettier", file: "prettier-icon.svg" },
+  { name: "Tailwind CSS", file: "tailwindcss-icon.svg" },
+  { name: "Sass", file: "sass-icon.svg" },
+  { name: "Font Awesome", file: "font-awesome-icon.svg" },
+  { name: "Travis CI", file: "travis-ci-icon.svg" },
+  { name: "Sonarqube", file: "sonarqube-icon.png" },
+  { name: "Google Analytics", file: "google-analytics-icon.svg" }
+];
 
-const Card = ({ href, title, details }) => {
+function HomePage() {
   return (
-    <>
-      <a className="card" href={href}>
-        <h3>{title} &rarr;</h3>
-        <p>{details}</p>
-      </a>
-      <style jsx>{`
-        .card {
-          padding: 18px 18px 24px;
-          width: 220px;
-          text-align: left;
-          text-decoration: none;
-          color: #434343;
-          border: 1px solid #9b9b9b;
-        }
-        .card:hover {
-          border-color: #067df7;
-        }
-        .card h3 {
-          margin: 0;
-          color: #067df7;
-          font-size: 18px;
-        }
-        .card p {
-          margin: 0;
-          padding: 12px 0 0;
-          font-size: 13px;
-          color: #333;
-        }
-      `}</style>
-    </>
-  );
-};
+    <Page>
+      <main className="h-full flex items-center justify-center">
+        <div className="flex flex-col items-center">
+          <img
+            id="next-logo"
+            src="/static/icons/nextjs-icon.svg"
+            className="h-32 md:h-48 relative"
+            alt="next.js logo"
+          />
 
-class HomePage extends React.Component<HomePageProps, any> {
-  public static async getInitialProps() {
-    // If client, call the API. If server-side rendered, call the function directly.
-    return process.browser
-      ? await apiGet<HomePageProps>("/date")
-      : { date: getCurrentDateTime() };
-  }
-
-  public render() {
-    const date = this.props.date;
-    return (
-      <Page>
-        <div className="hero">
-          <h1 className="title">Welcome to Next!</h1>
-          <p className="row date">
-            The date is:&nbsp;
-            {date ? <b>{date}</b> : <span className="loading" />}
+          <h2 className="font-semibold text-xl mt-4 sm:text-3xl sm:mt-8 text-gray-700 ">
+            Bootstrap you next project with this full-featured template.
+          </h2>
+          <p className="mt-4 text-sm sm:text-lg leading-relaxed text-gray-600">
+            Everything you need to create a fast and robust web application.
           </p>
+          <div className="container flex flex-wrap sm:w-3/4 justify-center mt-8">
+            {icons.map(icon => (
+              <Icon className="mx-2 my-2" icon={icon} key={icon.file} />
+            ))}
+          </div>
         </div>
-
-        <div className="row">
-          <Card
-            title="Getting Started"
-            details="Learn more about Next.js on GitHub and in their examples."
-            href="https://github.com/zeit/next.js#setup"
-          />
-          <Card
-            title="Examples"
-            details="Find other example boilerplates on the Next.js GitHub"
-            href="https://github.com/zeit/next.js/tree/master/examples"
-          />
-          <Card
-            title="Create Next App"
-            details="Was this tool helpful? Let us know how we can improve it!"
-            href="https://github.com/zeit/next.js"
-          />
-        </div>
-
-        <style jsx>{`
-          .hero {
-            width: 100%;
-            color: #333;
-          }
-          .title {
-            margin: 0;
-            width: 100%;
-            padding-top: 80px;
-            line-height: 1.15;
-            font-size: 48px;
-          }
-          .title,
-          .description {
-            text-align: center;
-          }
-          .row {
-            max-width: 880px;
-            margin: 80px auto 40px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-          }
-          .date {
-            height: 24px;
-            max-width: calc(100% - 32px);
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 16px;
-          }
-          .date p {
-            text-align: center;
-          }
-          .date span {
-            width: 176px;
-            text-align: center;
-          }
-          @keyframes Loading {
-            0% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
-            100% {
-              background-position: 0% 50%;
-            }
-          }
-          .date .loading {
-            max-width: 100%;
-            height: 24px;
-            border-radius: 4px;
-            display: inline-block;
-            background: linear-gradient(270deg, #d1d1d1, #eaeaea);
-            background-size: 200% 200%;
-            animation: Loading 2s ease infinite;
-          }
-        `}</style>
-      </Page>
-    );
-  }
+      </main>
+    </Page>
+  );
 }
 
 export default HomePage;
