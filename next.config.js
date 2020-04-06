@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withSass = require("@zeit/next-sass");
 const withFonts = require("next-fonts");
+const withPurgeCss = require("next-purgecss");
 const path = require("path");
 
 const nextConfig = {
@@ -32,6 +33,11 @@ const nextConfig = {
       }
     };
   },
+  purgeCssEnabled: ({ dev }) => !dev, // Disable purgecss during development
+  purgeCss: {
+    defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+    whitelist: () => ["__next"]
+  },
   webpack: config => {
     config.resolve.modules = [path.resolve("./node_modules"), path.resolve("src")];
     config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//));
@@ -44,4 +50,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withSass(withFonts(withBundleAnalyzer(nextConfig)));
+module.exports = withSass(withPurgeCss(withFonts(withBundleAnalyzer(nextConfig))));

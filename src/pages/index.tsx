@@ -9,6 +9,7 @@ const icons = [
   { name: "Jest", file: "jest-icon.svg" },
   { name: "Prettier", file: "prettier-icon.svg" },
   { name: "Tailwind CSS", file: "tailwindcss-icon.svg" },
+  { name: "PurgeCSS", file: "purgecss-icon.png" },
   { name: "Sass", file: "sass-icon.svg" },
   { name: "Font Awesome", file: "font-awesome-icon.svg" },
   { name: "Travis CI", file: "travis-ci-icon.svg" },
@@ -18,37 +19,36 @@ const icons = [
 
 function HomePage() {
   return (
-    <Page>
-      <main className="h-full flex items-center justify-center">
-        <div className="flex flex-col items-center">
-          <img
-            id="next-logo"
-            src="/static/icons/nextjs-icon.svg"
-            className="h-32 md:h-48 relative"
-            alt="next.js logo"
-          />
+    <Page className="flex flex-col items-center justify-center my-32 sm:my-auto">
+      <img
+        id="next-logo"
+        src="/static/icons/nextjs-icon.svg"
+        className="h-32 md:h-48 relative"
+        alt="next.js logo"
+      />
 
-          <h2 className="font-semibold text-xl mt-4 sm:text-3xl sm:mt-8 text-gray-700 ">
-            Bootstrap you next project with this full-featured template.
-          </h2>
-          <p className="mt-4 text-sm sm:text-lg leading-relaxed text-gray-600">
-            Everything you need to create a fast and robust web application.
-          </p>
-          <div className="container flex flex-wrap sm:w-3/4 justify-center mt-8">
-            {icons.map(icon => (
-              <Icon className="mx-2 my-2" icon={icon} key={icon.file} />
-            ))}
-          </div>
-          <div className="text-white mt-10 text-sm">
-            <LinkButton color="blue" href="/docs">
-              Get Started
-            </LinkButton>
-            <LinkButton href="https://github.com/jsulpis/next-starter-project">
-              Star on GitHub
-            </LinkButton>
-          </div>
-        </div>
-      </main>
+      <h2 className="font-semibold text-xl mt-4 sm:text-3xl sm:mt-8 text-gray-700 ">
+        Bootstrap you next project with this full-featured template.
+      </h2>
+      <p className="mt-4 text-sm sm:text-lg leading-relaxed text-gray-600">
+        Everything you need to create a fast and robust web application.
+      </p>
+      <div className="container flex flex-wrap sm:w-3/4 xl:w-1/2 justify-center mt-8">
+        {icons.map(icon => (
+          <Icon className="mx-2 my-2" icon={icon} key={icon.file} />
+        ))}
+      </div>
+      <div className="text-white mt-10 text-sm flex flex-col sm:flex-row">
+        <LinkButton color="blue" href="/docs">
+          Get Started
+        </LinkButton>
+        <LinkButton
+          href="https://github.com/jsulpis/next-starter-project"
+          className="mt-3 sm:mt-0"
+        >
+          Star on GitHub
+        </LinkButton>
+      </div>
     </Page>
   );
 }

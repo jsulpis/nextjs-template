@@ -1,17 +1,15 @@
 import Head, { HeadProps } from "components/layout/Head";
 import Header from "components/layout/Header";
-import React, { ReactNode } from "react";
+import React, { PropsWithChildren, HTMLAttributes } from "react";
 
-export interface PageProps extends HeadProps {
-  children: ReactNode;
-}
-
-const Page = (props: PageProps) => (
-  <div className="h-full">
+const Page = (props: PropsWithChildren<HeadProps> & HTMLAttributes<HTMLDivElement>) => (
+  <>
     <Head {...props} />
     <Header />
-    <div className="container h-full pt-16 mx-auto px-3">{props.children}</div>
-  </div>
+    <main className={"container mx-auto h-full py-16 " + props.className}>
+      {props.children}
+    </main>
+  </>
 );
 
 export default Page;
