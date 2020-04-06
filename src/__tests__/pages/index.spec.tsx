@@ -1,48 +1,14 @@
-import { render, wait } from "@testing-library/react";
-import getCurrentDateTime from "infrastructure/getCurrentDateTime";
-import apiGet from "lib/apiGet";
+import { render } from "@testing-library/react";
 import HomePage from "pages";
 import React from "react";
 
-jest.mock("lib/apiGet");
-jest.mock("infrastructure/getCurrentDateTime");
-
-describe("With React Testing Library", () => {
+describe("HomePage", () => {
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  it('Shows "Welcome to Next!"', () => {
-    const { container } = render(<HomePage date={""} />);
-
-    expect(container.querySelector(".title").textContent).toBe("Welcome to Next!");
-  });
-
-  it("should display the date", async () => {
-    const MOCK_DATE = "2019-08-27 20:44:46";
-    const { container } = render(<HomePage date={MOCK_DATE} />);
-
-    await wait(() => expect(container.querySelector(".loading")).toBeFalsy());
-
-    expect(container.querySelector(".date").textContent).toBe(
-      "The date is: " + MOCK_DATE
-    );
-  });
-
-  it("should call the API if client side", () => {
-    // @ts-ignore
-    process.browser = true;
-    HomePage.getInitialProps();
-
-    expect(apiGet).toHaveBeenCalled();
-  });
-
-  it("should not call the API if server side", () => {
-    // @ts-ignore
-    process.browser = false;
-    HomePage.getInitialProps();
-
-    expect(apiGet).not.toHaveBeenCalled();
-    expect(getCurrentDateTime).toHaveBeenCalled();
+  it("has a title", () => {
+    const { container } = render(<HomePage />);
+    expect(container.querySelector("h2").textContent).toBeTruthy();
   });
 });
