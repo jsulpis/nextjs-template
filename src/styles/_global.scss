@@ -13,7 +13,7 @@ body,
   height: 100%;
 }
 
-.container {
-  padding-left: 15px;
-  padding-right: 15px;
+#__next {
+  display: flex;
+  flex-direction: column;
 }
