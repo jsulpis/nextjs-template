@@ -30,7 +30,7 @@ function HomePage() {
       <h2 className="font-semibold text-xl mt-4 sm:text-3xl sm:mt-8 text-gray-700 ">
         Bootstrap you next project with this full-featured template.
       </h2>
-      <p className="mt-4 text-sm sm:text-lg leading-relaxed text-gray-600">
+      <p className="mt-4 paragraph">
         Everything you need to create a fast and robust web application.
       </p>
       <div className="container flex flex-wrap sm:w-3/4 xl:w-1/2 justify-center mt-8">
@@ -39,12 +39,12 @@ function HomePage() {
         ))}
       </div>
       <div className="text-white mt-10 text-sm flex flex-col sm:flex-row">
-        <LinkButton color="blue" href="/docs">
+        <LinkButton color="primary" href="/docs" className="mx-2">
           Get Started
         </LinkButton>
         <LinkButton
           href="https://github.com/jsulpis/next-starter-project"
-          className="mt-3 sm:mt-0"
+          className="mt-3 mx-2 sm:mt-0"
         >
           Star on GitHub
         </LinkButton>

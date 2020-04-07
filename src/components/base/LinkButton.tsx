@@ -1,7 +1,7 @@
 import React, { PropsWithChildren, HTMLAttributes } from "react";
 import Link from "next/link";
 
-type Color = "blue" | "gray";
+type Color = "primary" | "gray";
 
 type LinkButtonProps = HTMLAttributes<HTMLDivElement> & {
   color?: Color;
@@ -11,19 +11,11 @@ type LinkButtonProps = HTMLAttributes<HTMLDivElement> & {
 const LinkButton = (props: PropsWithChildren<LinkButtonProps>) => {
   const color = props.color || "gray";
   const href = props.href;
-  let cssClasses =
-    props.className +
-    " px-6 py-3 mx-2 rounded outline-none focus:outline-none uppercase shadow ";
+  let cssClasses = props.className + " btn btn-" + color;
 
-  // Required to prevent purgecss from deleting the associated tailwind classes
-  switch (color) {
-    case "blue":
-      cssClasses += `bg-blue-500 active:bg-blue-500 hover:bg-blue-600`;
-      break;
-    case "gray":
-      cssClasses += `bg-gray-500 active:bg-gray-500 hover:bg-gray-600`;
-      break;
-  }
+  // Since I made the classes by concatenation, purgecss won't see them and will delete
+  // the associated tailwind classes. To whitelist them, the classes just have to appear
+  // somewhere in the file: btn-primary btn-gray (this is why I made the Color type).
 
   if (process.browser && href.startsWith("http")) {
     return (
