@@ -12,14 +12,14 @@ const icons = [
   { name: "PurgeCSS", file: "purgecss-icon.png" },
   { name: "Sass", file: "sass-icon.svg" },
   { name: "Font Awesome", file: "font-awesome-icon.svg" },
-  { name: "Travis CI", file: "travis-ci-icon.svg" },
   { name: "Sonarqube", file: "sonarqube-icon.png" },
+  { name: "Travis CI", file: "travis-ci-icon.svg" },
   { name: "Google Analytics", file: "google-analytics-icon.svg" }
 ];
 
 function HomePage() {
   return (
-    <Page className="flex flex-col items-center justify-center my-32 sm:my-auto">
+    <Page className="flex flex-col items-center justify-center mt-16 sm:my-auto">
       <img
         id="next-logo"
         src="/static/icons/nextjs-icon.svg"
@@ -27,10 +27,10 @@ function HomePage() {
         alt="next.js logo"
       />
 
-      <h2 className="font-semibold text-xl mt-4 sm:text-3xl sm:mt-8 text-gray-700 ">
+      <h2 className="section-title mt-4 sm:text-3xl sm:mt-8">
         Bootstrap you next project with this full-featured template.
       </h2>
-      <p className="mt-4 paragraph">
+      <p className="paragraph mt-4">
         Everything you need to create a fast and robust web application.
       </p>
       <div className="container flex flex-wrap sm:w-3/4 xl:w-1/2 justify-center mt-8">

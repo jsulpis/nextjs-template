@@ -35,8 +35,8 @@ class Contact extends React.Component<any, ContactPageState> {
         <div className="text-left">
           <h2 className="section-title mt-16">Contact</h2>
           <p className="paragraph">
-            This is not an actual contact form. But it will send a Google Analytics event
-            on submit.
+            This is not an actual contact form. It will send a Google Analytics event on
+            submit to show how to do it.
           </p>
 
           <form className="mt-8 sm:w-1/2 xl:w-1/3" onSubmit={this.handleSubmit}>
