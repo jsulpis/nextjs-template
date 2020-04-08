@@ -17,40 +17,38 @@ const icons = [
   { name: "Google Analytics", file: "google-analytics-icon.svg" }
 ];
 
-function HomePage() {
-  return (
-    <Page className="flex flex-col items-center justify-center mt-16 sm:my-auto">
-      <img
-        id="next-logo"
-        src="/static/icons/nextjs-icon.svg"
-        className="h-32 md:h-48 relative"
-        alt="next.js logo"
-      />
+const Index = () => (
+  <Page className="flex flex-col items-center justify-center mt-16 sm:my-auto">
+    <img
+      id="next-logo"
+      src="/static/icons/nextjs-icon.svg"
+      className="h-32 md:h-48 relative"
+      alt="next.js logo"
+    />
 
-      <h2 className="section-title mt-4 sm:text-3xl sm:mt-8">
-        Bootstrap you next project with this full-featured template.
-      </h2>
-      <p className="paragraph mt-4">
-        Everything you need to create a fast and robust web application.
-      </p>
-      <div className="container flex flex-wrap sm:w-3/4 xl:w-1/2 justify-center mt-8">
-        {icons.map(icon => (
-          <Icon className="mx-2 my-2" icon={icon} key={icon.file} />
-        ))}
-      </div>
-      <div className="text-white mt-10 text-sm flex flex-col sm:flex-row">
-        <LinkButton color="primary" href="/docs" className="mx-2">
-          Get Started
-        </LinkButton>
-        <LinkButton
-          href="https://github.com/jsulpis/next-starter-project"
-          className="mt-3 mx-2 sm:mt-0"
-        >
-          Star on GitHub
-        </LinkButton>
-      </div>
-    </Page>
-  );
-}
+    <h2 className="section-title mt-4 sm:text-3xl sm:mt-8">
+      Bootstrap you next project with this full-featured template.
+    </h2>
+    <p className="paragraph mt-4">
+      Everything you need to create a fast and robust web application.
+    </p>
+    <div className="container flex flex-wrap sm:w-3/4 xl:w-1/2 justify-center mt-8">
+      {icons.map(icon => (
+        <Icon className="mx-2 my-2" icon={icon} key={icon.file} />
+      ))}
+    </div>
+    <div className="text-white mt-10 text-sm flex flex-col sm:flex-row">
+      <LinkButton color="primary" href="/docs" className="mx-2">
+        Get Started
+      </LinkButton>
+      <LinkButton
+        href="https://github.com/jsulpis/next-starter-project"
+        className="mt-3 mx-2 sm:mt-0"
+      >
+        Star on GitHub
+      </LinkButton>
+    </div>
+  </Page>
+);
 
-export default HomePage;
+export default Index;

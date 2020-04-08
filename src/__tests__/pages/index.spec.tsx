@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import HomePage from "pages";
+import Index from "pages";
 import React from "react";
 
 describe("HomePage", () => {
@@ -8,7 +8,7 @@ describe("HomePage", () => {
   });
 
   it("has a title", () => {
-    const { container } = render(<HomePage />);
+    const { container } = render(<Index />);
     expect(container.querySelector("h2").textContent).toBeTruthy();
   });
 });
