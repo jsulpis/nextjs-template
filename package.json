@@ -6,10 +6,11 @@
   "author": "Julien Sulpis",
   "scripts": {
     "dev": "next src",
-    "build": "next build src && mv src/.next .next",
-    "build:now": "npm run build && cp -r src/public public ",
+    "build": "next build src",
+    "build:now": "npm run build && mv src/.next .next && cp -r src/public public",
     "export": "next export src",
     "start": "next start src",
+    "clean": "rm -rf .next public src/.next src/out",
     "lint": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",

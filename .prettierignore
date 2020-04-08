@@ -1,3 +1,4 @@
 src/.next
 src/out
+.next
 coverage

@@ -12,6 +12,7 @@
 **/.next
 **/out
 **/.now
+public
 
 # misc
 .DS_Store
