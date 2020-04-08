@@ -4,12 +4,13 @@ import React from "react";
 
 interface ContactPageState {
   message: string;
+  errorMessage: string;
 }
 
 class Contact extends React.Component<any, ContactPageState> {
   constructor(props) {
     super(props);
-    this.state = { message: "" };
+    this.state = { message: "", errorMessage: "" };
   }
 
   public handleInput = e => {
@@ -18,18 +19,25 @@ class Contact extends React.Component<any, ContactPageState> {
 
   public handleSubmit = e => {
     e.preventDefault();
+    const message = this.state.message;
 
-    triggerAnalyticsEvent({
-      action: "submit_form",
-      category: "Contact",
-      label: "Form submission",
-      value: this.state.message
-    });
+    if (!!message) {
+      this.setState({ errorMessage: "" });
+
+      triggerAnalyticsEvent({
+        action: "submit_form",
+        category: "Contact",
+        label: "Form submission"
+      });
+    } else {
+      this.setState({ errorMessage: "You can't send an empty message !" });
+    }
 
     this.setState({ message: "" });
   };
 
   public render() {
+    const { message, errorMessage } = this.state;
     return (
       <Page title={"Contact"} description={"This is the contact Page"}>
         <div className="text-left">
@@ -51,7 +59,7 @@ class Contact extends React.Component<any, ContactPageState> {
                 rows={4}
                 cols={80}
                 onChange={this.handleInput}
-                value={this.state.message}
+                value={message}
                 className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
                 placeholder="Type a message..."
               />
@@ -60,6 +68,7 @@ class Contact extends React.Component<any, ContactPageState> {
             <button className="btn btn-primary mt-2" type="submit">
               Send Message
             </button>
+            <p className="error-message text-red-500 mt-2">{errorMessage}</p>
           </form>
         </div>
       </Page>
