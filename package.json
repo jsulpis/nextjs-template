@@ -6,7 +6,8 @@
   "author": "Julien Sulpis",
   "scripts": {
     "dev": "next src",
-    "build": "next build src",
+    "build": "next build src && mv src/.next .next",
+    "build:now": "npm run build && cp -r src/public public ",
     "export": "next export src",
     "start": "next start src",
     "lint": "prettier --check .",
@@ -14,9 +15,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "analyze": "BUNDLE_ANALYZE=both next build src",
-    "analyze:server": "BUNDLE_ANALYZE=server next build src",
-    "analyze:browser": "BUNDLE_ANALYZE=browser next build src"
+    "analyze": "BUNDLE_ANALYZE=both npm run build",
+    "analyze:server": "BUNDLE_ANALYZE=server npm run build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
@@ -26,7 +27,8 @@
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.3.4",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "tailwindcss": "^1.2.0"
   },
   "devDependencies": {
     "@testing-library/react": "^10.0.2",
@@ -43,10 +45,10 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.2.7",
     "next-fonts": "^1.0.3",
+    "next-purgecss": "^4.0.0",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.2",
     "pretty-quick": "^2.0.1",
-    "styled-jsx-plugin-sass": "^1.0.0",
     "typescript": "^3.8.3"
   },
   "husky": {

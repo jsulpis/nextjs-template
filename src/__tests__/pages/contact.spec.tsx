@@ -1,22 +1,19 @@
 import { render } from "@testing-library/react";
-import { triggerAnalyticsEvent } from "lib/gtag";
 import Contact from "pages/contact";
 import React from "react";
 
 jest.mock("lib/gtag");
 
-describe("With React Testing Library", () => {
-  it('Shows "This is the Contact page"', () => {
+describe("Contact Page", () => {
+  it("has a title", () => {
     const { container } = render(<Contact />);
 
-    expect(container.querySelector("h1").textContent).toBe("This is the Contact page");
+    expect(container.querySelector("h2").textContent).toBe("Contact");
   });
 
-  it("should send a Google Analytics event when submitting the form", () => {
+  it("contains a contact form", () => {
     const { container } = render(<Contact />);
 
-    container.querySelector("button").click();
-
-    expect(triggerAnalyticsEvent).toHaveBeenCalled();
+    expect(container.querySelector("form")).toBeTruthy();
   });
 });

@@ -7,11 +7,11 @@
 /coverage
 
 # production
-/build
-/dist
-src/.next
-src/out
-/.now
+**/build
+**/dist
+**/.next
+**/out
+**/.now
 
 # misc
 .DS_Store

@@ -18,7 +18,6 @@ export const triggerAnalyticsEvent = (e: Event) => {
   // @ts-ignore
   window.gtag("event", e.action, {
     event_category: e.category,
-    event_label: e.label,
-    value: e.value
+    event_label: e.label
   });
 };

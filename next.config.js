@@ -2,11 +2,14 @@ require("dotenv").config();
 const webpack = require("webpack");
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withSass = require("@zeit/next-sass");
-const withCSS = require("@zeit/next-css");
 const withFonts = require("next-fonts");
+const withPurgeCss = require("next-purgecss");
 const path = require("path");
 
 const nextConfig = {
+  env: {
+    APP_TITLE: "Next Starter Project"
+  },
   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
   analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
   bundleAnalyzerConfig: {
@@ -19,21 +22,21 @@ const nextConfig = {
       reportFilename: "bundles/client.html"
     }
   },
-  cssModules: true,
-  cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: "[local]-[hash:base64:8]"
-  },
   exportPathMap: function () {
     return {
       "/": { page: "/" },
-      about: {
-        page: "/about"
+      docs: {
+        page: "/docs"
       },
       contact: {
         page: "/contact"
       }
     };
+  },
+  purgeCssEnabled: ({ dev }) => !dev, // Disable purgecss during development
+  purgeCss: {
+    defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+    whitelist: () => ["__next"]
   },
   webpack: config => {
     config.resolve.modules = [path.resolve("./node_modules"), path.resolve("src")];
@@ -47,4 +50,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withSass(withCSS(withFonts(withBundleAnalyzer(nextConfig))));
+module.exports = withSass(withPurgeCss(withFonts(withBundleAnalyzer(nextConfig))));

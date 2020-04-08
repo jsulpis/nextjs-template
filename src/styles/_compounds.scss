@@ -1,0 +1,74 @@
+// CSS classes made up of Tailwind utilities
+
+.section-title {
+  @apply font-semibold text-xl text-gray-700;
+}
+
+.paragraph {
+  @apply text-sm font-light leading-relaxed text-gray-600;
+}
+
+@screen sm {
+  .section-title {
+    @apply text-3xl;
+  }
+
+  .paragraph {
+    @apply text-lg;
+  }
+}
+
+.btn {
+  @apply px-6 py-3 rounded shadow outline-none text-sm uppercase;
+
+  &-primary {
+    @apply bg-primary-500 text-white;
+
+    &:hover {
+      @apply bg-primary-600;
+    }
+  }
+
+  &-gray {
+    @apply bg-gray-500 text-white;
+
+    &:hover {
+      @apply bg-gray-600;
+    }
+  }
+
+  &:focus {
+    @apply outline-none;
+  }
+}
+
+// Bootstrap-like containers which I find more responsive
+// (Tailwind leaves no or little space on the sides near each breakpoint)
+.container {
+  width: 100%;
+  @apply px-4;
+}
+
+@screen sm {
+  .container {
+    max-width: 600px;
+  }
+}
+
+@screen md {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@screen lg {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@screen xl {
+  .container {
+    max-width: 1140px;
+  }
+}
