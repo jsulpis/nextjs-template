@@ -6,7 +6,8 @@
   "author": "Julien Sulpis",
   "scripts": {
     "dev": "next src",
-    "build": "next build src",
+    "build": "next build src && mv src/.next .next",
+    "build:now": "npm run build && cp -r src/public public ",
     "export": "next export src",
     "start": "next start src",
     "lint": "prettier --check .",
@@ -14,9 +15,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "analyze": "BUNDLE_ANALYZE=both next build src",
-    "analyze:server": "BUNDLE_ANALYZE=server next build src",
-    "analyze:browser": "BUNDLE_ANALYZE=browser next build src"
+    "analyze": "BUNDLE_ANALYZE=both npm run build",
+    "analyze:server": "BUNDLE_ANALYZE=server npm run build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
