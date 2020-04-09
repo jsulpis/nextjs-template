@@ -3,15 +3,19 @@ import Page from "components/layout/Page";
 import CodeBlock from "components/docs/CodeBlock";
 
 const Docs = () => (
-  <Page title={"Documentation"} description={"Documentation for the template."}>
-    <div className="text-left text-gray-700 ">
+  <Page
+    title={"Documentation"}
+    description={"Documentation for the template."}
+    className="mb-4"
+  >
+    <div className="text-left">
       <h2 className="section-title mt-16">Documentation</h2>
       <DocSectionTitle>Installation</DocSectionTitle>
       <DocUl>
         <DocLi>
-          <div className="inline-flex flex-col w-3/4">
+          <div className="inline-flex flex-col w-10/12 lg:w-3/4">
             <p>Clone the repository:</p>
-            <CodeBlock className="w-3/4 mt-1">
+            <CodeBlock className="mt-1">
               git clone https://github.com/jsulpis/next-starter-project.git
             </CodeBlock>
           </div>
@@ -105,19 +109,19 @@ const Docs = () => (
       </p>
       <DocUl>
         <DocLi>
-          <div className="inline-flex flex-col w-3/4">
+          <div className="inline-flex flex-col w-10/12 lg:w-3/4">
             <p>First register your variable as a secret using the CLI:</p>
-            <CodeBlock className="w-3/4 m-2 ">
+            <CodeBlock className="m-2">
               now secret add variable-name variable-value
             </CodeBlock>
           </div>
         </DocLi>
         <DocLi>
-          <div className="inline-flex flex-col w-3/4">
+          <div className="inline-flex flex-col w-10/12 lg:w-3/4">
             <p>
               Then add your variable to the <FileName>now.json</FileName> file:
             </p>
-            <div className="w-3/4 bg-white rounded p-2 m-2 border text-xs font-mono whitespace-pre-wrap">
+            <div className="bg-white rounded p-2 m-2 border text-xs font-mono whitespace-pre-wrap">
               {`{
   "build": {
     "env": {
@@ -147,12 +151,12 @@ const Docs = () => (
       </p>
       <DocUl>
         <DocLi>
-          <div className="inline-flex flex-col w-3/4">
+          <div className="inline-flex flex-col w-10/12 lg:w-3/4">
             <p>
               In your Zeit Now dashboard, go to your project settings, and override the
               build command with:
             </p>
-            <CodeBlock className="w-3/4 mt-1">npm run build:now</CodeBlock>
+            <CodeBlock className="mt-1">npm run build:now</CodeBlock>
           </div>
         </DocLi>
       </DocUl>
@@ -177,7 +181,7 @@ const DocLi = (props: PropsWithChildren<{}>) => (
 );
 
 const DocLink = (props: PropsWithChildren<HTMLProps<HTMLLinkElement>>) => (
-  <a href={props.href} className="font-semibold text-gray-900" target="_blank">
+  <a href={props.href} className="font-semibold" target="_blank">
     {props.children}
   </a>
 );

@@ -19,7 +19,7 @@ const icons = [
 
 const Index = () => (
   <Page
-    className="flex flex-col items-center justify-center mt-16 sm:my-auto"
+    className="flex flex-col items-center justify-center mt-16 sm:pt-24 lg:pb-4 sm:my-auto"
     backgroundColor="gray-200"
   >
     <img
@@ -29,7 +29,7 @@ const Index = () => (
       alt="next.js logo"
     />
 
-    <h2 className="section-title mt-4 sm:text-3xl sm:mt-8">
+    <h2 className="section-title mt-4 sm:text-3xl sm:mt-4">
       Full-featured template for JAMstack websites.
     </h2>
     <p className="paragraph mt-4">

@@ -18,11 +18,11 @@ const Page = (props: PageProps) => (
         (props.backgroundColor || "gray-100")
       }
     >
-      <div className={"container h-full mx-auto py-16 pb-0 " + props.className}>
+      <div className={"container h-full mx-auto py-16 " + props.className}>
         {props.children}
       </div>
     </main>
-    <Footer className={"bg-" + (props.backgroundColor || "gray-100")} />
+    <Footer />
   </>
 );
 

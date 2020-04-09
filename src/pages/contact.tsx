@@ -3,7 +3,11 @@ import ContactForm from "components/contact/ContactForm";
 import Page from "components/layout/Page";
 
 const Contact = () => (
-  <Page title={"Contact"} description={"This is the contact Page"}>
+  <Page
+    title={"Contact"}
+    description={"This is the contact Page"}
+    className="mb-8 lg:mb-0"
+  >
     <div className="text-left">
       <h2 className="section-title mt-16">Contact</h2>
       <p className="paragraph">
