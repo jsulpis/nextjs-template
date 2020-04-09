@@ -1,5 +1,7 @@
 {
-  "env": {
-    "GA_TRACKING_ID": "@ga-tracking-id-4"
+  "build": {
+    "env": {
+      "GA_TRACKING_ID": "@ga-tracking-id-4"
+    }
   }
 }
