@@ -12,13 +12,16 @@ const icons = [
   { name: "PurgeCSS", file: "purgecss-icon.png" },
   { name: "Sass", file: "sass-icon.svg" },
   { name: "Font Awesome", file: "font-awesome-icon.svg" },
-  { name: "Sonarqube", file: "sonarqube-icon.png" },
+  { name: "SonarCloud", file: "sonarcloud-icon.jpg" },
   { name: "Travis CI", file: "travis-ci-icon.svg" },
   { name: "Google Analytics", file: "google-analytics-icon.svg" }
 ];
 
 const Index = () => (
-  <Page className="flex flex-col items-center justify-center mt-16 sm:my-auto">
+  <Page
+    className="flex flex-col items-center justify-center mt-16 sm:my-auto"
+    backgroundColor="gray-200"
+  >
     <img
       id="next-logo"
       src="/static/icons/nextjs-icon.svg"
@@ -27,10 +30,11 @@ const Index = () => (
     />
 
     <h2 className="section-title mt-4 sm:text-3xl sm:mt-8">
-      Bootstrap you next project with this full-featured template.
+      Full-featured template for JAMstack websites.
     </h2>
     <p className="paragraph mt-4">
-      Everything you need to create a fast and robust web application.
+      Everything you need to develop, test, deploy and monitor a fast and robust web
+      application.
     </p>
     <div className="container flex flex-wrap sm:w-3/4 xl:w-1/2 justify-center mt-8">
       {icons.map(icon => (

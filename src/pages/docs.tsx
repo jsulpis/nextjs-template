@@ -22,9 +22,6 @@ const Docs = () => (
       <DocSubsectionTitle>Tailwind CSS</DocSubsectionTitle>
       <DocUl>
         <DocLi>
-          <DocLink href="https://tailwindcss.com">Official documentation</DocLink>
-        </DocLi>
-        <DocLi>
           You may want to change the theme in <FileName>tailwind.config.js</FileName> to
           use your own color palette.
         </DocLi>
@@ -36,9 +33,6 @@ const Docs = () => (
       </DocUl>
       <DocSubsectionTitle>Purge CSS</DocSubsectionTitle>
       <DocUl>
-        <DocLi>
-          <DocLink href="https://purgecss.com/">Official documentation</DocLink>
-        </DocLi>
         <DocLi>
           This plugin will delete all unused CSS in the final bundle and dramatically
           reduce its size, but it comes with a few constraints. For example you will lose
@@ -123,14 +117,25 @@ const Docs = () => (
             <p>
               Then add your variable to the <FileName>now.json</FileName> file:
             </p>
-            <div className="w-3/4 bg-white rounded p-2 m-2 text-xs font-mono whitespace-pre-wrap">
+            <div className="w-3/4 bg-white rounded p-2 m-2 border text-xs font-mono whitespace-pre-wrap">
               {`{
-  "env": {
-    "MY_VARIABLE": "@variable-name"
+  "build": {
+    "env": {
+      "MY_VARIABLE": "@variable-name"
+    }
   }
 }`}
             </div>
           </div>
+        </DocLi>
+        <DocLi>
+          The configuration above will make your variables available at build time. If you
+          want to use them during run time, remove the "build" key and use directly the
+          "env" key. See the{" "}
+          <DocLink href="https://zeit.co/docs/v2/serverless-functions/env-and-secrets/">
+            documentation
+          </DocLink>{" "}
+          for more details.
         </DocLi>
       </DocUl>
 
