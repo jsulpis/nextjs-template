@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - lts/*
+
+dist: trusty
+
+addons:
+  sonarcloud:
+    organization: "jsulpis-github"
+    token: $SONAR_TOKEN
+
+cache: npm
+
+script:
+  - npm run lint
+  - npm run test:coverage
+  - npm run build
+  - sonar-scanner
+
+branches:
+  only:
+    - master
