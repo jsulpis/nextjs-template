@@ -20,7 +20,7 @@ const icons = [
 const Index = () => (
   <Page
     className="flex flex-col items-center justify-center mt-16 sm:pt-24 lg:pb-4 sm:my-auto"
-    backgroundColor="gray-200"
+    mainClassName="bg-gray-200"
   >
     <img
       id="next-logo"

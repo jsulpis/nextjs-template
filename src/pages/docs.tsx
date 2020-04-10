@@ -119,7 +119,7 @@ const Docs = () => (
         <DocLi>
           <div className="inline-flex flex-col w-10/12 lg:w-3/4">
             <p>
-              Then add your variable to the <FileName>now.json</FileName> file:
+              Then add your variable to the <FileName>now.json</FileName> file.
             </p>
             <div className="bg-white rounded p-2 m-2 border text-xs font-mono whitespace-pre-wrap">
               {`{

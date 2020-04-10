@@ -6,7 +6,7 @@ module.exports = {
   moduleDirectories: ["node_modules", "src"],
   collectCoverageFrom: [
     "src/components/**",
-    "src/infrastructure/**",
+    "src/lambdas/**",
     "src/pages/**",
     "!src/pages/_app.tsx",
     "!src/pages/_document.tsx"

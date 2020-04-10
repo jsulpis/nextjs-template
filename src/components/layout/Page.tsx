@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 type PageProps = PropsWithChildren<HeadProps> &
   HTMLAttributes<HTMLDivElement> & {
-    backgroundColor?: string;
+    mainClassName?: string;
   };
 
 const Page = (props: PageProps) => (
@@ -14,8 +14,8 @@ const Page = (props: PageProps) => (
     <Header />
     <main
       className={
-        "flex-grow flex items-center justify-center bg-" +
-        (props.backgroundColor || "gray-100")
+        "flex-grow flex items-center justify-center " +
+        (props.mainClassName || "bg-gray-100")
       }
     >
       <div className={"container h-full mx-auto py-16 " + props.className}>
