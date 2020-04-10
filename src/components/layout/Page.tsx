@@ -3,12 +3,24 @@ import Header from "components/layout/Header";
 import React, { PropsWithChildren, HTMLAttributes } from "react";
 import Footer from "./Footer";
 
-const Page = (props: PropsWithChildren<HeadProps> & HTMLAttributes<HTMLDivElement>) => (
+type PageProps = PropsWithChildren<HeadProps> &
+  HTMLAttributes<HTMLDivElement> & {
+    mainClassName?: string;
+  };
+
+const Page = (props: PageProps) => (
   <>
     <Head {...props} />
     <Header />
-    <main className={"container flex-grow mx-auto py-16 pb-0 " + props.className}>
-      {props.children}
+    <main
+      className={
+        "flex-grow flex items-center justify-center " +
+        (props.mainClassName || "bg-gray-100")
+      }
+    >
+      <div className={"container h-full mx-auto py-16 " + props.className}>
+        {props.children}
+      </div>
     </main>
     <Footer />
   </>

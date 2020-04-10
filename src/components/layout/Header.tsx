@@ -11,7 +11,7 @@ function Header() {
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   return (
-    <header className="absolute top-0 z-50 bg-white text-gray-700 shadow-lg w-full">
+    <header className="absolute top-0 z-50 bg-white shadow-lg w-full">
       <nav className="container mx-auto flex flex-wrap items-center justify-between px-2 py-3">
         <div className="w-full relative flex justify-between md:w-auto px-3 md:static md:block md:justify-start">
           <Link href="/">

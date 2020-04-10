@@ -1,4 +1,4 @@
-import getCurrentDateTime from "infrastructure/getCurrentDateTime";
+import getCurrentDateTime from "lambdas/getCurrentDateTime";
 import { NextApiResponse } from "next";
 
 export default (_, res: NextApiResponse) => {

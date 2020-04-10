@@ -12,7 +12,7 @@
 **/.next
 **/out
 **/.now
-public
+/public
 
 # misc
 .DS_Store

@@ -5,7 +5,7 @@ import { faCopy } from "@fortawesome/free-solid-svg-icons";
 const CodeBlock = (props: PropsWithChildren<HTMLProps<HTMLDivElement>>) => (
   <div
     className={
-      "flex justify-between bg-white rounded px-3 py-2 " + (props.className || "")
+      "flex justify-between bg-white rounded px-3 py-2 border " + (props.className || "")
     }
   >
     <p className="text-xs focus:outline-none font-mono">{props.children}</p>

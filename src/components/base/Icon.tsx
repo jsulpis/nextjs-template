@@ -24,7 +24,7 @@ const Icon = (props: IconProps & React.HTMLAttributes<HTMLDivElement>) => {
           title={name + "logo"}
         />
       </div>
-      <p className="text-xs text-gray-600">{name}</p>
+      <p className="text-xs opacity-75">{name}</p>
     </div>
   );
 };

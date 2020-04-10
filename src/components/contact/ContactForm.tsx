@@ -24,10 +24,7 @@ const ContactForm = () => {
   return (
     <form className="mt-8 sm:w-1/2 xl:w-1/3" onSubmit={handleSubmit}>
       <div className="relative w-full">
-        <label
-          className="block text-gray-700 text-sm font-semibold mb-2"
-          htmlFor="message"
-        >
+        <label className="block text-sm font-semibold mb-2" htmlFor="message">
           Message
         </label>
         <textarea
@@ -35,7 +32,7 @@ const ContactForm = () => {
           cols={80}
           onChange={e => setMessage(e.target.value)}
           value={message}
-          className="px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
+          className="px-3 py-3 placeholder-gray-400 bg-white rounded text-sm shadow focus:outline-none focus:shadow-outline w-full"
           placeholder="Type a message..."
         />
       </div>
