@@ -1,7 +1,7 @@
 {
-  "name": "next-starter-project",
-  "description": "Full-featured template for next.js applications.",
-  "repository": "github:jsulpis/next-starter-project",
+  "name": "nextjs-template",
+  "description": "Full-featured template for JAMstack websites using next.js",
+  "repository": "github:jsulpis/nextjs-template",
   "license": "MIT",
   "author": "Julien Sulpis",
   "scripts": {

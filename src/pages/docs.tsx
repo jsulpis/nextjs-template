@@ -16,7 +16,7 @@ const Docs = () => (
           <div className="inline-flex flex-col w-10/12 lg:w-3/4">
             <p>Clone the repository:</p>
             <CodeBlock className="mt-1">
-              git clone https://github.com/jsulpis/next-starter-project.git
+              git clone https://github.com/jsulpis/nextjs-template.git
             </CodeBlock>
           </div>
         </DocLi>

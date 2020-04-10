@@ -47,12 +47,12 @@ export default function Footer() {
               </span>
               <ul className="list-unstyled">
                 <li>
-                  <FooterLink href="https://github.com/jsulpis/next-starter-project">
+                  <FooterLink href="https://github.com/jsulpis/nextjs-template">
                     Star on GitHub
                   </FooterLink>
                 </li>
                 <li>
-                  <FooterLink href="https://github.com/jsulpis/next-starter-project/blob/master/LICENSE">
+                  <FooterLink href="https://github.com/jsulpis/nextjs-template/blob/master/LICENSE">
                     MIT License
                   </FooterLink>
                 </li>
