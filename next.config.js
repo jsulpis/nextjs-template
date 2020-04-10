@@ -8,7 +8,7 @@ const path = require("path");
 
 const nextConfig = {
   env: {
-    APP_TITLE: "Next Starter Project"
+    APP_TITLE: "Next.js Template"
   },
   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
   analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),

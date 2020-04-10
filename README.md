@@ -1,22 +1,22 @@
 <h1 align="center">Next Starter Project</h1>
 <h3 align="center">Quickly start a new project with Next.js using this ready-to-deploy template</h3>
 <p align="center">
-	<a href="https://travis-ci.org/jsulpis/next-starter-project">
-		<img alt="Build Status" src="https://travis-ci.org/jsulpis/next-starter-project.svg?branch=master" />
+	<a href="https://travis-ci.org/jsulpis/nextjs-template">
+		<img alt="Build Status" src="https://travis-ci.org/jsulpis/nextjs-template.svg?branch=master" />
 	</a>
-  <a href="https://sonarcloud.io/dashboard?id=next-starter-project">
-		<img alt="Quality Gate Status" src="https://sonarcloud.io/api/project_badges/measure?project=next-starter-project&metric=alert_status" />
+  <a href="https://sonarcloud.io/dashboard?id=nextjs-template">
+		<img alt="Quality Gate Status" src="https://sonarcloud.io/api/project_badges/measure?project=nextjs-template&metric=alert_status" />
 	</a>
-  <a href="https://sonarcloud.io/dashboard?id=next-starter-project">
-		<img alt="Coverage" src="https://sonarcloud.io/api/project_badges/measure?project=next-starter-project&metric=coverage" />
+  <a href="https://sonarcloud.io/dashboard?id=nextjs-template">
+		<img alt="Coverage" src="https://sonarcloud.io/api/project_badges/measure?project=nextjs-template&metric=coverage" />
 	</a>
-    <a href="https://deploy.now.sh/?repo=https://github.com/jsulpis/next-starter-project">
+    <a href="https://deploy.now.sh/?repo=https://github.com/jsulpis/nextjs-template">
    		<img src="https://deploy.now.sh/static/button.svg" />
 	</a>
 </p>
 
-<a align="center" href="https://next-starter-project.now.sh">
-  <img class="repo-preview" src="https://raw.githubusercontent.com/jsulpis/next-starter-project/master/preview.png" alt="Screenshot image"/>
+<a align="center" href="https://nextjs-template.now.sh">
+  <img class="repo-preview" src="https://raw.githubusercontent.com/jsulpis/nextjs-template/master/preview.png" alt="Screenshot image"/>
 </a>
 
 ## Features
@@ -59,8 +59,8 @@ This template is a mix of several examples from the [next.js GitHub repository](
 Download the zip or clone this project:
 
 ```shell
-git clone https://github.com/jsulpis/next-starter-project.git
-cd next-starter-project
+git clone https://github.com/jsulpis/nextjs-template.git
+cd nextjs-template
 ```
 
 then install all the dependencies:
@@ -114,8 +114,8 @@ Or you can also integrate now.sh with your GitHub account, which will allow it t
 
 Contributions are welcome ! If you improve this template, feel free to share it.
 
-1. Fork the project (<https://github.com/jsulpis/next-starter-project/fork>)
-2. Clone it on your machine (`git clone https://github.com/yourName/next-starter-project.git`)
+1. Fork the project (<https://github.com/jsulpis/nextjs-template/fork>)
+2. Clone it on your machine (`git clone https://github.com/yourName/nextjs-template.git`)
 3. Create your feature branch (`git checkout -b feature/awesomeFeature`)
 4. Commit your changes (`git commit -am 'Add my awesome feature'`)
 5. Push your branch (`git push origin feature/awesomeFeature`)
@@ -123,4 +123,4 @@ Contributions are welcome ! If you improve this template, feel free to share it.
 
 ## License
 
-Released under the [MIT](https://github.com/jsulpis/next-starter-project/blob/master/LICENSE) license.
+Released under the [MIT](https://github.com/jsulpis/nextjs-template/blob/master/LICENSE) license.

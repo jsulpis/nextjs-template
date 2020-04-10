@@ -46,7 +46,7 @@ const Index = () => (
         Get Started
       </LinkButton>
       <LinkButton
-        href="https://github.com/jsulpis/next-starter-project"
+        href="https://github.com/jsulpis/nextjs-template"
         className="mt-3 mx-2 sm:mt-0"
       >
         Star on GitHub
