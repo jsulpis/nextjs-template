@@ -1,0 +1,20 @@
+body {
+  @apply text-gray-700;
+}
+
+h2 {
+  @apply font-semibold text-3xl;
+}
+
+h3 {
+  @apply font-semibold text-2xl mt-6;
+}
+
+h4 {
+  @apply font-semibold text-lg mt-3;
+}
+
+p,
+.p {
+  @apply leading-relaxed opacity-90;
+}

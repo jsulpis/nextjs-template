@@ -9,12 +9,12 @@ const Docs = () => (
     className="mb-4"
   >
     <div className="text-left">
-      <h2 className="section-title mt-16">Documentation</h2>
-      <DocSectionTitle>Installation</DocSectionTitle>
+      <h2 className="mt-16">Documentation</h2>
+      <h3>Installation</h3>
       <DocUl>
         <DocLi>
           <div className="inline-flex flex-col w-10/12 lg:w-3/4">
-            <p>Clone the repository:</p>
+            <p className="opacity-100">Clone the repository:</p>
             <CodeBlock className="mt-1">
               git clone https://github.com/jsulpis/nextjs-template.git
             </CodeBlock>
@@ -22,8 +22,9 @@ const Docs = () => (
         </DocLi>
         <DocLi>Update the package.json metadata with yours.</DocLi>
       </DocUl>
-      <DocSectionTitle>Configuration</DocSectionTitle>
-      <DocSubsectionTitle>Tailwind CSS</DocSubsectionTitle>
+
+      <h3>Configuration</h3>
+      <h4>Tailwind CSS</h4>
       <DocUl>
         <DocLi>
           You may want to change the theme in <FileName>tailwind.config.js</FileName> to
@@ -35,7 +36,8 @@ const Docs = () => (
           more details.
         </DocLi>
       </DocUl>
-      <DocSubsectionTitle>Purge CSS</DocSubsectionTitle>
+
+      <h4>Purge CSS</h4>
       <DocUl>
         <DocLi>
           This plugin will delete all unused CSS in the final bundle and dramatically
@@ -51,7 +53,8 @@ const Docs = () => (
           provides some solutions to common issues when working with Purge CSS.
         </DocLi>
       </DocUl>
-      <DocSubsectionTitle>SonarCloud</DocSubsectionTitle>
+
+      <h4>SonarCloud</h4>
       <DocUl>
         <DocLi>Create a new project on SonarCloud and note the generated token.</DocLi>
         <DocLi>
@@ -61,7 +64,8 @@ const Docs = () => (
           See the Travis CI configuration below to trigger the analysis during the build.
         </DocLi>
       </DocUl>
-      <DocSubsectionTitle>Travis CI</DocSubsectionTitle>
+
+      <h4>Travis CI</h4>
       <DocUl>
         <DocLi>
           Activate your repository in your Travis CI settings to trigger the builds on git
@@ -80,7 +84,8 @@ const Docs = () => (
           and SonarCloud.
         </DocLi>
       </DocUl>
-      <DocSubsectionTitle>Google Analytics</DocSubsectionTitle>
+
+      <h4>Google Analytics</h4>
       <DocUl>
         <DocLi>
           Register your website in your{" "}
@@ -94,23 +99,27 @@ const Docs = () => (
           instructions below to setup variables with Zeit Now.
         </DocLi>
       </DocUl>
-      <DocSectionTitle>Deployment</DocSectionTitle>
-      <p className="paragraph text-base">
+
+      <h3>Deployment</h3>
+      <p>
         The template is ready to be deployed on{" "}
         <DocLink href="https://zeit.co/docs">Zeit Now</DocLink> so the following
         instructions target this platform. Of course you can easily deploy it with any
         other cloud platform like{" "}
         <DocLink href="https://www.netlify.com/">Netlify</DocLink>.
       </p>
-      <DocSubsectionTitle>Environment variables</DocSubsectionTitle>
-      <p className="paragraph text-base">
+
+      <h4>Environment variables</h4>
+      <p>
         You will need to register your environment variables and provide them to Zeit Now
         using the <FileName>now.json</FileName> file.
       </p>
       <DocUl>
         <DocLi>
           <div className="inline-flex flex-col w-10/12 lg:w-3/4">
-            <p>First register your variable as a secret using the CLI:</p>
+            <p className="opacity-100">
+              First register your variable as a secret using the CLI:
+            </p>
             <CodeBlock className="m-2">
               now secret add variable-name variable-value
             </CodeBlock>
@@ -118,10 +127,10 @@ const Docs = () => (
         </DocLi>
         <DocLi>
           <div className="inline-flex flex-col w-10/12 lg:w-3/4">
-            <p>
+            <p className="opacity-100">
               Then add your variable to the <FileName>now.json</FileName> file.
             </p>
-            <div className="bg-white rounded p-2 m-2 border text-xs font-mono whitespace-pre-wrap">
+            <div className="bg-white rounded p-2 m-2 border text-xs text-gray-900 font-mono whitespace-pre-wrap">
               {`{
   "build": {
     "env": {
@@ -143,8 +152,8 @@ const Docs = () => (
         </DocLi>
       </DocUl>
 
-      <DocSubsectionTitle>Deployment script</DocSubsectionTitle>
-      <p className="paragraph text-base">
+      <h4>Deployment script</h4>
+      <p>
         The source files of the template are gathered in a <FileName>src</FileName> folder
         for clarity. Since this is not the default file structure for next.js projects, we
         need to update the deployment script in Zeit Now.
@@ -152,11 +161,11 @@ const Docs = () => (
       <DocUl>
         <DocLi>
           <div className="inline-flex flex-col w-10/12 lg:w-3/4">
-            <p>
+            <p className="opacity-100">
               In your Zeit Now dashboard, go to your project settings, and override the
               build command with:
             </p>
-            <CodeBlock className="mt-1">npm run build:now</CodeBlock>
+            <CodeBlock className="opacity-100 mt-1">npm run build:now</CodeBlock>
           </div>
         </DocLi>
       </DocUl>
@@ -164,29 +173,19 @@ const Docs = () => (
   </Page>
 );
 
-const DocSectionTitle = (props: PropsWithChildren<{}>) => (
-  <h3 className="font-semibold text-2xl mt-6">{props.children}</h3>
-);
-
-const DocSubsectionTitle = (props: PropsWithChildren<{}>) => (
-  <h4 className="font-semibold text-lg mt-3">{props.children}</h4>
-);
-
-const DocUl = (props: PropsWithChildren<{}>) => (
-  <ul className="paragraph text-base">{props.children}</ul>
-);
+const DocUl = (props: PropsWithChildren<{}>) => <ul className="p">{props.children}</ul>;
 
 const DocLi = (props: PropsWithChildren<{}>) => (
   <li className="list-disc list-inside">{props.children}</li>
 );
 
 const DocLink = (props: PropsWithChildren<HTMLProps<HTMLLinkElement>>) => (
-  <a href={props.href} className="font-semibold" target="_blank">
+  <a href={props.href} className="font-semibold hover:text-gray-900" target="_blank">
     {props.children}
   </a>
 );
 
 const FileName = (props: PropsWithChildren<{}>) => (
-  <span className="font-mono text-sm text-gray-800">{props.children}</span>
+  <span className="font-mono text-sm">{props.children}</span>
 );
 export default Docs;

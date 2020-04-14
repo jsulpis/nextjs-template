@@ -1,0 +1,30 @@
+// Bootstrap-like containers which I find more responsive
+// (Tailwind leaves no or little space on the sides near each breakpoint)
+.container {
+  width: 100%;
+  @apply px-4;
+}
+
+@screen sm {
+  .container {
+    max-width: 600px;
+  }
+}
+
+@screen md {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@screen lg {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@screen xl {
+  .container {
+    max-width: 1140px;
+  }
+}

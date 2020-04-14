@@ -2,8 +2,12 @@
 @tailwind base;
 @tailwind components;
 
-@import "./compounds";
+// Styles using Tailwind utilities
+@import "./buttons";
+@import "./layout";
+@import "./typography";
 
 @tailwind utilities;
 
+// Styles not using Tailwind utilities
 @import "./global";

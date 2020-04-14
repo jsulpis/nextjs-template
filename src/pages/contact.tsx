@@ -9,8 +9,8 @@ const Contact = () => (
     className="mb-8 lg:mb-0"
   >
     <div className="text-left">
-      <h2 className="section-title mt-16">Contact</h2>
-      <p className="paragraph">
+      <h2 className="mt-16">Contact</h2>
+      <p>
         This is not an actual contact form. It will send a Google Analytics event on
         submit to show how to do it.
       </p>
