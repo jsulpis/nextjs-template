@@ -10,6 +10,9 @@
   <a href="https://sonarcloud.io/dashboard?id=nextjs-template">
 		<img alt="Coverage" src="https://sonarcloud.io/api/project_badges/measure?project=nextjs-template&metric=coverage" />
 	</a>
+  <a href="http://makeapullrequest.com">
+		<img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" />
+	</a>
 </p>
 
 <a align="center" href="https://nextjs-template.juliensulpis.now.sh">
@@ -60,17 +63,10 @@ I built this template with all the tools I found useful to develop my own person
 
 ## Installation
 
-Clone this project:
+Clone the repository and install the dependencies:
 
 ```shell
-git clone https://github.com/jsulpis/nextjs-template.git
-cd nextjs-template
-```
-
-Install the dependencies:
-
-```shell
-npm install
+git clone https://github.com/jsulpis/nextjs-template.git && cd nextjs-template && npm i
 ```
 
 ## Usage
@@ -79,7 +75,7 @@ npm install
 
 Serve with hot reload at localhost:3000.
 
-```shell
+```
 npm run dev
 ```
 
@@ -87,19 +83,19 @@ npm run dev
 
 Build for production: next.js automatically renders static HTML pages when possible. Then if you deploy on Zeit Now you can have both statically rendered pages and server-side rendered pages (as lambdas functions).
 
-```shell
+```
 npm run build
 ```
 
 Launch a server for server-side rendering (after building the application):
 
-```shell
+```
 npm start
 ```
 
 Generate a fully static project with pre-rendered pages to put directly on a server or any static website hosting platform. Note that you lose the possibility to have server-side rendered pages. With Zeit Now you should not have to run this command.
 
-```shell
+```
 npm run export
 ```
 
@@ -116,17 +112,6 @@ Then you can integrate Zeit Now with your GitHub account, which will allow it to
 ## Configuration
 
 See the [documentation page](https://nextjs-template.juliensulpis.now.sh/docs)
-
-## Contributing
-
-Contributions are welcome ! If you improve this template, feel free to share it.
-
-1. Fork the project (<https://github.com/jsulpis/nextjs-template/fork>)
-2. Clone it on your machine (`git clone https://github.com/yourName/nextjs-template.git`)
-3. Create your feature branch (`git checkout -b feature/awesomeFeature`)
-4. Commit your changes (`git commit -am 'Add my awesome feature'`)
-5. Push your branch (`git push origin feature/awesomeFeature`)
-6. Open a new Pull Request
 
 ## License
 
