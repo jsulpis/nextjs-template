@@ -1,5 +1,5 @@
-<h1 align="center">Next Starter Project</h1>
-<h3 align="center">Quickly start a new project with Next.js using this ready-to-deploy template</h3>
+<h1 align="center">Next.js Template</h1>
+<h3 align="center">Full-featured template for JAMstack websites using next.js</h3>
 <p align="center">
 	<a href="https://travis-ci.org/jsulpis/nextjs-template">
 		<img alt="Build Status" src="https://travis-ci.org/jsulpis/nextjs-template.svg?branch=master" />
@@ -10,37 +10,43 @@
   <a href="https://sonarcloud.io/dashboard?id=nextjs-template">
 		<img alt="Coverage" src="https://sonarcloud.io/api/project_badges/measure?project=nextjs-template&metric=coverage" />
 	</a>
-    <a href="https://deploy.now.sh/?repo=https://github.com/jsulpis/nextjs-template">
-   		<img src="https://deploy.now.sh/static/button.svg" />
-	</a>
 </p>
 
-<a align="center" href="https://nextjs-template.now.sh">
+<a align="center" href="https://nextjs-template.juliensulpis.now.sh">
   <img class="repo-preview" src="https://raw.githubusercontent.com/jsulpis/nextjs-template/master/preview.png" alt="Screenshot image"/>
 </a>
 
+**Deploy your own copy of this project in just a few clicks on Zeit Now:**
+
+[![Deploy with Zeit Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/jsulpis/nextjs-template)
+
+## About
+
+I built this template with all the tools I found useful to develop my own personal projects, so it can be a bit biased. If you find something that you think is not relevant or could be improved, please open an issue or a pull request to fix it.
+
 ## Features
 
-This template is a mix of several examples from the [next.js GitHub repository](https://github.com/zeit/next.js/tree/canary/examples). I chose some features that are relevant to me but you can include other examples or remove features to meet your specifid needs. Here are the included features:
+**React.js + TypeScript**
 
-**TypeScript**
-
-- Leverage the power of Typescript in all your source code
+- Because I love strongly typed languages (I'm a bit of a java developer at heart)
 
 **Linting**
 
-- TSlint
-- Prettier
+- Don't bother with linting ever again. Let Prettier handle it for you. Pre-commit hook included to lint your staged files.
 
 **Testing Setup**
 
 - Unit tests with Jest
 - Using the React Testing Library to make tests that mimic real user interactions
 
+**UI**
+
+- Leverage the power of Tailwind CSS to build beautiful interfaces. You will find a Tailwind config file that you can customize to build your own theme.
+- You can also use conventional scss files.
+
 **APIs**
 
-- In the same repo: you can easily share client and server code like your models
-- Run together with the client application with next.js: no need to run multiple projects to have your application working locally
+- The demo project does not use it, but with next.js you can have your APIs in a dedicated folder in the same repo and deploy them in no time with Zeit Now.
 
 **SEO**
 
@@ -49,21 +55,19 @@ This template is a mix of several examples from the [next.js GitHub repository](
 **Deployment**
 
 - Example of CI with Travis-CI
-- Deploy this application to now.sh using one single command (see 'deployment' section below)
+- Ready to deploy on Zeit Now using git integration or the command line (see 'deployment' section below)
 - Google global site tag (gtag.js) for sending data to Google Analytics
 
 ## Installation
 
-### Install
-
-Download the zip or clone this project:
+Clone this project:
 
 ```shell
 git clone https://github.com/jsulpis/nextjs-template.git
 cd nextjs-template
 ```
 
-then install all the dependencies:
+Install the dependencies:
 
 ```shell
 npm install
@@ -81,34 +85,37 @@ npm run dev
 
 ### Build
 
-Build for production and launch server. Your application is then served with server-side rendering (SSR).
+Build for production: next.js automatically renders static HTML pages when possible. Then if you deploy on Zeit Now you can have both statically rendered pages and server-side rendered pages (as lambdas functions).
 
 ```shell
 npm run build
+```
+
+Launch a server for server-side rendering (after building the application):
+
+```shell
 npm start
 ```
 
-Or generate a static project with pre-rendered pages to put directly on your server (or any static website hosting platform, like GitHub Pages). This is better for SEO as the Time To First Byte is lower than with SSR.
+Generate a fully static project with pre-rendered pages to put directly on a server or any static website hosting platform. Note that you lose the possibility to have server-side rendered pages. With Zeit Now you should not have to run this command.
 
 ```shell
 npm run export
 ```
 
-**Warning**: the code expects the API URL to be the same as the deployment URL, which is the case when the application is deployed with now.sh. Therefore, if you run the statically generated application, you will likely have 404 errors when calling the API since it will not be running. You can of course use remote APIs instead.
+## Deployment
 
-### Deployment
+This template is ready to be deployed on Zeit Now:
 
-This template is ready to be deployed on now.sh using their super cool single command:
+[![Deploy with Zeit Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/jsulpis/nextjs-template)
 
-```shell
-now
-```
+**Important:** Because of the custom folder architecture, you have to change the default build command from `npm run build` to `npm run build:now`.
 
-You might want first to create an account on zeit.co and, install the command and login, as explained in the [doc](https://zeit.co/docs).
+Then you can integrate Zeit Now with your GitHub account, which will allow it to deploy each branch and pull request to their own environment, and the master branch in production.
 
-This command will build the application, upload the build and deploy it on a staging environment whith a custom url, and deploy the API functions as AWS lambdas. I just love it.
+## Configuration
 
-Or you can also integrate now.sh with your GitHub account, which will allow it to deploy each branch and pull request to their own environment, and the master branch in production.
+See the [documentation page](https://nextjs-template.juliensulpis.now.sh/docs)
 
 ## Contributing
 
