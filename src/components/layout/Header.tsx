@@ -36,7 +36,7 @@ function Header() {
             {routes.map(route => (
               <li className="text-left py-1" key={route.label}>
                 <Link href={route.href}>
-                  <a className="px-3 hover:opacity-75">{route.label}</a>
+                  <a className="px-3 font-semibold hover:opacity-75">{route.label}</a>
                 </Link>
               </li>
             ))}

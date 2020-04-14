@@ -8,9 +8,9 @@ const CodeBlock = (props: PropsWithChildren<HTMLProps<HTMLDivElement>>) => (
       "flex justify-between bg-white rounded px-3 py-2 border " + (props.className || "")
     }
   >
-    <p className="text-xs focus:outline-none font-mono">{props.children}</p>
+    <p className="text-xs text-gray-900 focus:outline-none font-mono">{props.children}</p>
     <FontAwesomeIcon
-      className="h-4 text-gray-400 cursor-pointer"
+      className="h-4 text-gray-500 cursor-pointer"
       onClick={() => copyToClipboard(props.children)}
       icon={faCopy}
     ></FontAwesomeIcon>

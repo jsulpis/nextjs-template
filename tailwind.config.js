@@ -8,6 +8,9 @@ module.exports = {
       },
       colors: {
         primary: colors.blue
+      },
+      opacity: {
+        "90": ".9"
       }
     }
   },

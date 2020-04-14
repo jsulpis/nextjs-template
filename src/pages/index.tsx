@@ -29,10 +29,10 @@ const Index = () => (
       alt="next.js logo"
     />
 
-    <h2 className="section-title mt-4 sm:text-3xl sm:mt-4">
+    <h2 className="mt-4 font-semibold text-xl sm:text-3xl">
       Full-featured template for JAMstack websites.
     </h2>
-    <p className="paragraph mt-4">
+    <p className="mt-4 text-sm sm:text-lg">
       Everything you need to develop, test, deploy and monitor a fast and robust web
       application.
     </p>

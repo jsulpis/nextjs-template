@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const FooterLink = (props: PropsWithChildren<{ href: string }>) => (
-  <a href={props.href} className="font-semibold">
+  <a href={props.href} className="font-semibold hover:text-gray-900">
     {props.children}
   </a>
 );
@@ -63,8 +63,8 @@ export default function Footer() {
         <hr className="mt-3 mb-6 border-gray-400" />
         <div className="w-full mx-auto">
           <p className="text-sm py-1">
-            © {new Date().getFullYear()} made with{" "}
-            <FontAwesomeIcon className="h-2 align-baseline inline-block" icon={faHeart} />{" "}
+            © {new Date().getFullYear()} made with
+            <FontAwesomeIcon className="h-2 align-baseline inline-block" icon={faHeart} />
             by <FooterLink href="https://github.com/jsulpis">Julien Sulpis</FooterLink>.
           </p>
         </div>

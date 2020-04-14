@@ -40,7 +40,9 @@ const ContactForm = () => {
       <button className="btn btn-primary mt-2" type="submit">
         Send Message
       </button>
-      <p className="error-message text-red-500 mt-2">{errorMessage}</p>
+      <p className="error-message opacity-100 font-semibold text-red-500 mt-2">
+        {errorMessage}
+      </p>
     </form>
   );
 };
