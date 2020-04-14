@@ -14,9 +14,12 @@ const Docs = () => (
       <DocUl>
         <DocLi>
           <div className="inline-flex flex-col w-10/12 lg:w-3/4">
-            <p className="opacity-100">Clone the repository:</p>
+            <p className="opacity-100">
+              Clone the repository and install the dependencies:
+            </p>
             <CodeBlock className="mt-1">
-              git clone https://github.com/jsulpis/nextjs-template.git
+              git clone https://github.com/jsulpis/nextjs-template.git && cd
+              nextjs-template && npm i
             </CodeBlock>
           </div>
         </DocLi>
