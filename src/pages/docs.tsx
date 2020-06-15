@@ -114,46 +114,12 @@ const Docs = () => (
 
       <h4>Environment variables</h4>
       <p>
-        You will need to register your environment variables and provide them to Vercel
-        using the <FileName>now.json</FileName> file.
+        This project uses an environment variable called GA_TRACKING_ID for the Google
+        Analytics Tracker ID. You can set it in your project settings on Vercel. Vercel
+        allows you to set variables for each environment (production, preview and
+        development) so you can for instance set the Analytics variable only in production
+        to avoid polluting the analytics during the development.
       </p>
-      <DocUl>
-        <DocLi>
-          <div className="inline-flex flex-col w-10/12 lg:w-3/4">
-            <p className="opacity-100">
-              First register your variable as a secret using the CLI:
-            </p>
-            <CodeBlock className="m-2">
-              now secret add variable-name variable-value
-            </CodeBlock>
-          </div>
-        </DocLi>
-        <DocLi>
-          <div className="inline-flex flex-col w-10/12 lg:w-3/4">
-            <p className="opacity-100">
-              Then add your variable to the <FileName>now.json</FileName> file.
-            </p>
-            <div className="p-2 m-2 font-mono text-xs text-gray-900 whitespace-pre-wrap bg-white border rounded">
-              {`{
-  "build": {
-    "env": {
-      "MY_VARIABLE": "@variable-name"
-    }
-  }
-}`}
-            </div>
-          </div>
-        </DocLi>
-        <DocLi>
-          The configuration above will make your variables available at build time. If you
-          want to use them during run time, remove the "build" key and use directly the
-          "env" key. See the{" "}
-          <DocLink href="https://zeit.co/docs/v2/serverless-functions/env-and-secrets/">
-            documentation
-          </DocLink>{" "}
-          for more details.
-        </DocLi>
-      </DocUl>
 
       <h4>Deployment script</h4>
       <p>
@@ -169,6 +135,7 @@ const Docs = () => (
               build command with:
             </p>
             <CodeBlock className="mt-1 opacity-100">npm run build:now</CodeBlock>
+            You can leave the other default settings.
           </div>
         </DocLi>
       </DocUl>
