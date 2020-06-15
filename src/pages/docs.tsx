@@ -99,14 +99,14 @@ const Docs = () => (
         </DocLi>
         <DocLi>
           Create an environment variable called GA_TRACKING_ID with your new id. See the
-          instructions below to setup variables with Zeit Now.
+          instructions below to setup variables on Vercel.
         </DocLi>
       </DocUl>
 
       <h3>Deployment</h3>
       <p>
         The template is ready to be deployed on{" "}
-        <DocLink href="https://zeit.co/docs">Zeit Now</DocLink> so the following
+        <DocLink href="https://vercel.com/docs">Vercel</DocLink> so the following
         instructions target this platform. Of course you can easily deploy it with any
         other cloud platform like{" "}
         <DocLink href="https://www.netlify.com/">Netlify</DocLink>.
@@ -114,7 +114,7 @@ const Docs = () => (
 
       <h4>Environment variables</h4>
       <p>
-        You will need to register your environment variables and provide them to Zeit Now
+        You will need to register your environment variables and provide them to Vercel
         using the <FileName>now.json</FileName> file.
       </p>
       <DocUl>
@@ -133,7 +133,7 @@ const Docs = () => (
             <p className="opacity-100">
               Then add your variable to the <FileName>now.json</FileName> file.
             </p>
-            <div className="bg-white rounded p-2 m-2 border text-xs text-gray-900 font-mono whitespace-pre-wrap">
+            <div className="p-2 m-2 font-mono text-xs text-gray-900 whitespace-pre-wrap bg-white border rounded">
               {`{
   "build": {
     "env": {
@@ -159,16 +159,16 @@ const Docs = () => (
       <p>
         The source files of the template are gathered in a <FileName>src</FileName> folder
         for clarity. Since this is not the default file structure for next.js projects, we
-        need to update the deployment script in Zeit Now.
+        need to update the deployment script in Vercel.
       </p>
       <DocUl>
         <DocLi>
           <div className="inline-flex flex-col w-10/12 lg:w-3/4">
             <p className="opacity-100">
-              In your Zeit Now dashboard, go to your project settings, and override the
+              In your Vercel dashboard, go to your project settings, and override the
               build command with:
             </p>
-            <CodeBlock className="opacity-100 mt-1">npm run build:now</CodeBlock>
+            <CodeBlock className="mt-1 opacity-100">npm run build:now</CodeBlock>
           </div>
         </DocLi>
       </DocUl>
