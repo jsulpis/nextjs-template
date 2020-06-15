@@ -2,9 +2,9 @@ import NextHead from "next/head";
 import React from "react";
 
 const defaultDescription = "Full-featured template for next.js applications.";
-const defaultOGURL = "";
-const defaultOGImage = defaultOGURL + "/static/image.png";
-const defaultTitle = process.env.APP_TITLE;
+const defaultOGURL = process.env.appUrl;
+const defaultOGImage = defaultOGURL + "/static/og-image.png";
+const defaultTitle = process.env.appTitle;
 
 export interface HeadProps {
   description?: string;
@@ -27,8 +27,6 @@ const Head = (props: HeadProps) => (
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={props.ogImage || defaultOGImage} />
     <meta property="og:image" content={props.ogImage || defaultOGImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
   </NextHead>
 );
 

@@ -114,11 +114,20 @@ const Docs = () => (
 
       <h4>Environment variables</h4>
       <p>
-        This project uses an environment variable called GA_TRACKING_ID for the Google
-        Analytics Tracker ID. You can set it in your project settings on Vercel. Vercel
-        allows you to set variables for each environment (production, preview and
-        development) so you can for instance set the Analytics variable only in production
-        to avoid polluting the analytics during the development.
+        This project uses two environment variables that you can set in your project
+        settings on Vercel:
+      </p>
+      <DocUl>
+        <DocLi>GA_TRACKING_ID should contain your Google Analytics Tracker ID</DocLi>
+        <DocLi>
+          APP_URL is the deploy url of your application. It is used in the social networks
+          meta tags.
+        </DocLi>
+      </DocUl>
+      <p>
+        Note that Vercel allows you to set variables for each environment (production,
+        preview and development) so you can for instance set the Analytics variable only
+        in production to avoid polluting the analytics during the development.
       </p>
 
       <h4>Deployment script</h4>
