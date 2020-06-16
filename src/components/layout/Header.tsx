@@ -33,6 +33,7 @@ function Header() {
           className={`flex overflow-hidden transition-height duration-300 md:h-auto ${
             isCollapsed ? "h-0" : "h-24"
           } `}
+          id="list-mobile"
         >
           <ul className="flex flex-col list-none md:flex-row">
             {routes.map(route => (
