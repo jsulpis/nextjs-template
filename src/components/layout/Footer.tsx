@@ -63,8 +63,12 @@ export default function Footer() {
         <hr className="mt-3 mb-6 border-gray-400" />
         <div className="w-full mx-auto">
           <p className="py-1 text-sm">
-            © {new Date().getFullYear()} made with{" "}
-            <FontAwesomeIcon className="inline-block h-2 align-baseline" icon={faHeart} />{" "}
+            © {new Date().getFullYear()} Made with{" "}
+            <FontAwesomeIcon
+              className="inline-block align-baseline"
+              icon={faHeart}
+              size="xs"
+            />{" "}
             by <FooterLink href="https://github.com/jsulpis">Julien Sulpis</FooterLink>.
           </p>
         </div>
