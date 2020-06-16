@@ -2,13 +2,15 @@ require("dotenv").config();
 const webpack = require("webpack");
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withSass = require("@zeit/next-sass");
+const withCss = require("@zeit/next-css");
 const withFonts = require("next-fonts");
 const withPurgeCss = require("next-purgecss");
 const path = require("path");
 
 const nextConfig = {
   env: {
-    APP_TITLE: "Next.js Template"
+    appTitle: "Next.js Template",
+    appUrl: process.env.APP_URL
   },
   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
   analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
@@ -36,7 +38,8 @@ const nextConfig = {
   purgeCssEnabled: ({ dev }) => !dev, // Disable purgecss during development
   purgeCss: {
     defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-    whitelist: () => ["__next"]
+    whitelist: () => ["__next"],
+    whitelistPatterns: () => [/svg.*/, /fa.*/] // Keep Fontawesome classes
   },
   webpack: config => {
     config.resolve.modules = [path.resolve("./node_modules"), path.resolve("src")];
@@ -50,4 +53,6 @@ const nextConfig = {
   }
 };
 
-module.exports = withSass(withPurgeCss(withFonts(withBundleAnalyzer(nextConfig))));
+module.exports = withSass(
+  withCss(withPurgeCss(withFonts(withBundleAnalyzer(nextConfig))))
+);

@@ -1,8 +1,10 @@
 import { render } from "@testing-library/react";
 import Contact from "pages/contact";
 import React from "react";
+import * as router from "next/router";
 
 jest.mock("lib/gtag");
+jest.spyOn(router, "useRouter").mockReturnValue({} as any);
 
 describe("Contact Page", () => {
   it("has a title", () => {

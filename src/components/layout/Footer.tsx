@@ -10,10 +10,10 @@ const FooterLink = (props: PropsWithChildren<{ href: string }>) => (
 
 export default function Footer() {
   return (
-    <footer className="relative text-sm bg-gray-200 p-6">
-      <div className="container mx-auto px-4">
+    <footer className="relative p-6 text-sm bg-gray-200">
+      <div className="container px-4 mx-auto">
         <div className="flex flex-wrap items-end">
-          <div className="w-full lg:w-6/12 px-4 text-base">
+          <div className="w-full px-4 text-base lg:w-6/12">
             <p>
               Theme:{" "}
               <FooterLink href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit/presentation">
@@ -23,9 +23,9 @@ export default function Footer() {
               .
             </p>
           </div>
-          <div className="w-full flex flex-wrap lg:w-6/12 px-4 lg:text-left">
-            <div className="w-full mt-3 lg:w-5/12 px-4">
-              <span className="block uppercase text-sm font-semibold mb-1 opacity-75">
+          <div className="flex flex-wrap w-full px-4 lg:w-6/12 lg:text-left">
+            <div className="w-full px-4 mt-3 lg:w-5/12">
+              <span className="block mb-1 text-sm font-semibold uppercase opacity-75">
                 Useful Links
               </span>
               <ul className="list-unstyled">
@@ -35,14 +35,14 @@ export default function Footer() {
                   </FooterLink>
                 </li>
                 <li>
-                  <FooterLink href="https://jsulpis.github.io/nuxt-template">
+                  <FooterLink href="https://nuxtjs-template.netlify.app/">
                     Nuxt.js Template
                   </FooterLink>
                 </li>
               </ul>
             </div>
-            <div className="w-full mt-3 lg:w-5/12 px-4">
-              <span className="block uppercase text-sm font-semibold mb-1 opacity-75">
+            <div className="w-full px-4 mt-3 lg:w-5/12">
+              <span className="block mb-1 text-sm font-semibold uppercase opacity-75">
                 About
               </span>
               <ul className="list-unstyled">
@@ -62,9 +62,13 @@ export default function Footer() {
         </div>
         <hr className="mt-3 mb-6 border-gray-400" />
         <div className="w-full mx-auto">
-          <p className="text-sm py-1">
-            © {new Date().getFullYear()} made with{" "}
-            <FontAwesomeIcon className="h-2 align-baseline inline-block" icon={faHeart} />{" "}
+          <p className="py-1 text-sm">
+            © {new Date().getFullYear()} Made with{" "}
+            <FontAwesomeIcon
+              className="inline-block align-baseline"
+              icon={faHeart}
+              size="xs"
+            />{" "}
             by <FooterLink href="https://github.com/jsulpis">Julien Sulpis</FooterLink>.
           </p>
         </div>

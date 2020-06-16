@@ -18,36 +18,33 @@ const icons = [
 ];
 
 const Index = () => (
-  <Page
-    className="flex flex-col items-center justify-center mt-16 sm:pt-24 lg:pb-4 sm:my-auto"
-    mainClassName="bg-gray-200"
-  >
+  <Page className="flex flex-col items-center justify-center mt-16 sm:pt-24 lg:pb-4 sm:my-auto">
     <img
       id="next-logo"
       src="/static/icons/nextjs-icon.svg"
-      className="h-32 md:h-48 relative"
+      className="relative h-32 md:h-48"
       alt="next.js logo"
     />
 
-    <h2 className="mt-4 font-semibold text-xl sm:text-3xl">
+    <h2 className="mt-4 text-xl font-semibold sm:text-3xl">
       Full-featured template for JAMstack websites.
     </h2>
     <p className="mt-4 text-sm sm:text-lg">
       Everything you need to develop, test, deploy and monitor a fast and robust web
       application.
     </p>
-    <div className="container flex flex-wrap sm:w-3/4 xl:w-1/2 justify-center mt-8">
+    <div className="container flex flex-wrap justify-center mt-8 sm:w-3/4 xl:w-1/2">
       {icons.map(icon => (
         <Icon className="mx-2 my-2" icon={icon} key={icon.file} />
       ))}
     </div>
-    <div className="text-white mt-10 text-sm flex flex-col sm:flex-row">
+    <div className="flex flex-col mt-10 text-sm text-white sm:flex-row">
       <LinkButton color="primary" href="/docs" className="mx-2">
         Get Started
       </LinkButton>
       <LinkButton
         href="https://github.com/jsulpis/nextjs-template"
-        className="mt-3 mx-2 sm:mt-0"
+        className="mx-2 mt-3 sm:mt-0"
       >
         Star on GitHub
       </LinkButton>

@@ -19,9 +19,9 @@
   <img class="repo-preview" src="https://raw.githubusercontent.com/jsulpis/nextjs-template/master/preview.png" alt="Screenshot image"/>
 </a>
 
-**Deploy your own copy of this project in just a few clicks on Zeit Now:**
+**Deploy your own copy of this project in just a few clicks on Vercel:**
 
-[![Deploy with Zeit Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/jsulpis/nextjs-template)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/jsulpis/nextjs-template)
 
 ## About
 
@@ -49,7 +49,7 @@ I built this template with all the tools I found useful to develop my own person
 
 **APIs**
 
-- The demo project does not use it, but with next.js you can have your APIs in a dedicated folder in the same repo and deploy them in no time with Zeit Now.
+- The demo project does not use it, but with next.js you can have your APIs in a dedicated folder in the same repo and deploy them in no time with Vercel.
 
 **SEO**
 
@@ -58,7 +58,7 @@ I built this template with all the tools I found useful to develop my own person
 **Deployment**
 
 - Example of CI with Travis-CI
-- Ready to deploy on Zeit Now using git integration or the command line (see 'deployment' section below)
+- Ready to deploy on Vercel using git integration or the command line (see 'deployment' section below)
 - Google global site tag (gtag.js) for sending data to Google Analytics
 
 ## Installation
@@ -81,7 +81,7 @@ npm run dev
 
 ### Build
 
-Build for production: next.js automatically renders static HTML pages when possible. Then if you deploy on Zeit Now you can have both statically rendered pages and server-side rendered pages (as lambdas functions).
+Build for production: next.js automatically renders static HTML pages when possible. Then if you deploy on Vercel you can have both statically rendered pages and server-side rendered pages (as lambdas functions).
 
 ```
 npm run build
@@ -93,7 +93,7 @@ Launch a server for server-side rendering (after building the application):
 npm start
 ```
 
-Generate a fully static project with pre-rendered pages to put directly on a server or any static website hosting platform. Note that you lose the possibility to have server-side rendered pages. With Zeit Now you should not have to run this command.
+Generate a fully static project with pre-rendered pages to put directly on a server or any static website hosting platform. Note that you lose the possibility to have server-side rendered pages. With Vercel you should not have to run this command.
 
 ```
 npm run export
@@ -101,13 +101,13 @@ npm run export
 
 ## Deployment
 
-This template is ready to be deployed on Zeit Now:
+This template is ready to be deployed on Vercel:
 
-[![Deploy with Zeit Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/jsulpis/nextjs-template)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/jsulpis/nextjs-template)
 
 **Important:** Because of the custom folder architecture, you have to change the default build command from `npm run build` to `npm run build:now`.
 
-Then you can integrate Zeit Now with your GitHub account, which will allow it to deploy each branch and pull request to their own environment, and the master branch in production.
+Then you can integrate Vercel with your GitHub account, which will allow it to deploy each branch and pull request to their own environment, and the master branch in production.
 
 ## Configuration
 

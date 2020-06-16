@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const routes = [
   { href: "/", label: "Home" },
@@ -9,34 +10,42 @@ const routes = [
 
 function Header() {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const router = useRouter();
 
   return (
-    <header className="absolute top-0 z-50 bg-white shadow-lg w-full">
-      <nav className="container mx-auto flex flex-wrap items-center justify-between px-2 py-3">
-        <div className="w-full relative flex justify-between md:w-auto px-3 md:static md:block md:justify-start">
+    <header className="absolute top-0 z-50 w-full bg-white shadow-lg">
+      <nav className="container flex flex-wrap items-center justify-between px-2 py-3 mx-auto">
+        <div className="relative flex justify-between w-full px-3 md:w-auto md:static md:block md:justify-start">
           <Link href="/">
-            <a className="text-lg font-bold inline-block py-2">{process.env.APP_TITLE}</a>
+            <a className="inline-block py-2 text-lg font-bold">{process.env.appTitle}</a>
           </Link>
           <button
-            className="text-xl px-3 py-1 md:hidden outline-none focus:outline-none"
+            className="px-3 py-1 text-xl outline-none md:hidden focus:outline-none"
             type="button"
             onClick={() => setIsCollapsed(!isCollapsed)}
           >
-            <span className="block w-6 h-px rounded-sm bg-gray-700"></span>
-            <span className="block w-6 h-px rounded-sm bg-gray-700 mt-1"></span>
-            <span className="block w-6 h-px rounded-sm bg-gray-700 mt-1"></span>
+            <span className="block w-6 h-px bg-gray-700 rounded-sm"></span>
+            <span className="block w-6 h-px mt-1 bg-gray-700 rounded-sm"></span>
+            <span className="block w-6 h-px mt-1 bg-gray-700 rounded-sm"></span>
           </button>
         </div>
         <div
           className={`flex overflow-hidden transition-height duration-300 md:h-auto ${
             isCollapsed ? "h-0" : "h-24"
           } `}
+          id="list-mobile"
         >
-          <ul className="flex flex-col md:flex-row list-none">
+          <ul className="flex flex-col list-none md:flex-row">
             {routes.map(route => (
-              <li className="text-left py-1" key={route.label}>
+              <li className="py-1 text-left" key={route.label}>
                 <Link href={route.href}>
-                  <a className="px-3 font-semibold hover:opacity-75">{route.label}</a>
+                  <a
+                    className={`px-3 font-semibold hover:opacity-75 ${
+                      router.pathname === route.href ? "text-primary-500" : ""
+                    }`}
+                  >
+                    {route.label}
+                  </a>
                 </Link>
               </li>
             ))}
