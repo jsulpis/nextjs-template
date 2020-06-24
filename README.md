@@ -15,7 +15,7 @@
 	</a>
 </p>
 
-<a align="center" href="https://nextjs-template.juliensulpis.now.sh">
+<a align="center" href="https://nextjs-template.juliensulpis.vercel.app">
   <img class="repo-preview" src="https://raw.githubusercontent.com/jsulpis/nextjs-template/master/preview.png" alt="Screenshot image"/>
 </a>
 
@@ -111,7 +111,7 @@ Then you can integrate Vercel with your GitHub account, which will allow it to d
 
 ## Configuration
 
-See the [documentation page](https://nextjs-template.juliensulpis.now.sh/docs)
+See the [documentation page](https://nextjs-template.juliensulpis.vercel.app/docs)
 
 ## License
 
