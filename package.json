@@ -6,8 +6,8 @@
   "author": "Julien Sulpis",
   "scripts": {
     "dev": "next src",
-    "build": "npm run clean && next build src",
-    "build:now": "npm run build && cp -r src/.next .next && cp -r src/public public",
+    "build": "yarn clean && next build src",
+    "build:now": "yarn build && cp -r src/.next .next && cp -r src/public public",
     "export": "next export src",
     "start": "next start src",
     "clean": "rm -rf .next src/.next public src/out",
@@ -16,9 +16,9 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "analyze": "BUNDLE_ANALYZE=both npm run build",
-    "analyze:server": "BUNDLE_ANALYZE=server npm run build",
-    "analyze:browser": "BUNDLE_ANALYZE=browser npm run build"
+    "analyze": "BUNDLE_ANALYZE=both yarn build",
+    "analyze:server": "BUNDLE_ANALYZE=server yarn build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser yarn build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",

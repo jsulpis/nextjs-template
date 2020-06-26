@@ -1,20 +1,18 @@
 language: node_js
 node_js:
-  - lts/*
-
-dist: trusty
+  - 11
 
 addons:
   sonarcloud:
     organization: "jsulpis-github"
     token: $SONAR_TOKEN
 
-cache: npm
+cache: yarn
 
 script:
-  - npm run lint
-  - npm run test:coverage
-  - npm run build
+  - yarn lint
+  - yarn test:coverage
+  - yarn build
   - sonar-scanner
 
 branches:

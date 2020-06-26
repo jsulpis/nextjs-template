@@ -76,7 +76,7 @@ git clone https://github.com/jsulpis/nextjs-template.git && cd nextjs-template &
 Serve with hot reload at localhost:3000.
 
 ```
-npm run dev
+yarn dev
 ```
 
 ### Build
@@ -84,7 +84,7 @@ npm run dev
 Build for production: next.js automatically renders static HTML pages when possible. Then if you deploy on Vercel you can have both statically rendered pages and server-side rendered pages (as lambdas functions).
 
 ```
-npm run build
+yarn build
 ```
 
 Launch a server for server-side rendering (after building the application):
@@ -96,7 +96,7 @@ npm start
 Generate a fully static project with pre-rendered pages to put directly on a server or any static website hosting platform. Note that you lose the possibility to have server-side rendered pages. With Vercel you should not have to run this command.
 
 ```
-npm run export
+yarn export
 ```
 
 ## Deployment
@@ -105,7 +105,7 @@ This template is ready to be deployed on Vercel:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/jsulpis/nextjs-template)
 
-**Important:** Because of the custom folder architecture, you have to change the default build command from `npm run build` to `npm run build:now`.
+**Important:** Because of the custom folder architecture, you have to change the default build command from `yarn build` to `yarn build:now`.
 
 Then you can integrate Vercel with your GitHub account, which will allow it to deploy each branch and pull request to their own environment, and the master branch in production.
 
