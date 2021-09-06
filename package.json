@@ -16,9 +16,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "analyze": "BUNDLE_ANALYZE=both yarn build",
-    "analyze:server": "BUNDLE_ANALYZE=server yarn build",
-    "analyze:browser": "BUNDLE_ANALYZE=browser yarn build",
+    "analyze": "ANALYZE=true yarn build",
     "prepare": "husky install",
     "pre-commit": "pretty-quick --staged"
   },
