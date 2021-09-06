@@ -3,7 +3,6 @@ import React from "react";
 import Docs from "pages/docs";
 import * as router from "next/router";
 
-jest.mock("lib/gtag");
 jest.spyOn(router, "useRouter").mockReturnValue({} as any);
 
 describe("Documentation Page", () => {

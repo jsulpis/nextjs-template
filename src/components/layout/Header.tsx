@@ -4,8 +4,7 @@ import { useRouter } from "next/router";
 
 const routes = [
   { href: "/", label: "Home" },
-  { href: "/docs", label: "Documentation" },
-  { href: "/contact", label: "Contact" }
+  { href: "/docs", label: "Documentation" }
 ];
 
 function Header() {
