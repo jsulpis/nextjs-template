@@ -8,7 +8,6 @@ describe("Icon", () => {
     );
 
     const renderedImg = container.querySelector("img");
-    expect(renderedImg.src).toBe("http://localhost/static/icons/my-file.svg");
     expect(renderedImg.alt).toBe("My Icon");
 
     expect(getByText("My Icon")).toBeTruthy();
