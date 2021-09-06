@@ -17,7 +17,9 @@ function Header() {
       <nav className="container flex flex-wrap items-center justify-between px-2 py-3 mx-auto">
         <div className="relative flex justify-between w-full px-3 md:w-auto md:static md:block md:justify-start">
           <Link href="/">
-            <a className="inline-block py-2 text-lg font-bold">{process.env.appTitle}</a>
+            <a className="inline-block py-2 text-lg font-bold">
+              {process.env.NEXT_PUBLIC_APP_TITLE}
+            </a>
           </Link>
           <button
             className="px-3 py-1 text-xl outline-none md:hidden focus:outline-none"

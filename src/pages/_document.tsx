@@ -1,10 +1,10 @@
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from "next/document";
 import React from "react";
 
 export default class extends Document {
   public render() {
     return (
-      <html>
+      <Html>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
@@ -21,7 +21,7 @@ export default class extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

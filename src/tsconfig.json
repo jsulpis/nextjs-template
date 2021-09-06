@@ -1,3 +1,6 @@
 {
-  "extends": "../tsconfig.json"
+  "extends": "../tsconfig.json",
+  "compilerOptions": {},
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

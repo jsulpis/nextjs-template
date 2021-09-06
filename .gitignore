@@ -21,6 +21,3 @@ yarn-debug.log*
 yarn-error.log*
 .idea
 
-# Environment Variables
-.env
-.env.build
