@@ -1,8 +1,8 @@
 <h1 align="center">Next.js Template</h1>
 <h3 align="center">Full-featured template for JAMstack websites using next.js</h3>
 <p align="center">
-	<a href="https://travis-ci.org/jsulpis/nextjs-template">
-		<img alt="Build Status" src="https://travis-ci.org/jsulpis/nextjs-template.svg?branch=master" />
+	<a href="https://github.com/jsulpis/nextjs-template/actions/workflows/build.yml">
+		<img alt="Build Status" src="https://github.com/jsulpis/nextjs-template/actions/workflows/build.yml/badge.svg" />
 	</a>
   <a href="https://sonarcloud.io/dashboard?id=nextjs-template">
 		<img alt="Quality Gate Status" src="https://sonarcloud.io/api/project_badges/measure?project=nextjs-template&metric=alert_status" />
