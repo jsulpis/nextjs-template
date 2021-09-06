@@ -46,7 +46,7 @@ const Docs = () => (
           This plugin will delete all unused CSS in the final bundle and dramatically
           reduce its size, but it comes with a few constraints. For example you will lose
           the css classes that you build dynamically using string concatenation if you
-          don't use some tricks.
+          don&apos;t use some tricks.
         </DocLi>
         <DocLi>
           This{" "}
@@ -159,7 +159,12 @@ const DocLi = (props: PropsWithChildren<{}>) => (
 );
 
 const DocLink = (props: PropsWithChildren<HTMLProps<HTMLLinkElement>>) => (
-  <a href={props.href} className="font-semibold hover:text-gray-900" target="_blank">
+  <a
+    href={props.href}
+    className="font-semibold hover:text-gray-900"
+    target="_blank"
+    rel="noreferrer"
+  >
     {props.children}
   </a>
 );

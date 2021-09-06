@@ -1,6 +1,8 @@
 const { colors } = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  mode: "jit",
+  purge: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       transitionProperty: {
@@ -10,7 +12,7 @@ module.exports = {
         primary: colors.blue
       },
       opacity: {
-        "90": ".9"
+        90: ".9"
       }
     }
   },

@@ -1,9 +1,10 @@
 module.exports = {
   testRegex: "(\\.|/)(test|spec)\\.(jsx?|js?|tsx?|ts?)$",
   transform: { "^.+\\.tsx?$": "babel-jest" },
-  testPathIgnorePatterns: ["src/.next/", "node_modules/"],
+  testPathIgnorePatterns: [".next/", "node_modules/"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   moduleDirectories: ["node_modules", "src"],
+  testEnvironment: "jsdom",
   collectCoverageFrom: [
     "src/components/**",
     "src/lambdas/**",

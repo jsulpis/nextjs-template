@@ -12,7 +12,6 @@
 **/.next
 **/out
 **/.now
-/public
 
 # misc
 .DS_Store
@@ -21,6 +20,5 @@ yarn-debug.log*
 yarn-error.log*
 .idea
 
-# Environment Variables
-.env
-.env.build
+
+.vercel

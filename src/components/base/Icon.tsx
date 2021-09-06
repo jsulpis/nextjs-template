@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface IconProps {
   icon: {
@@ -17,12 +18,14 @@ const Icon = (props: IconProps & React.HTMLAttributes<HTMLDivElement>) => {
           props.className
         }
       >
-        <img
-          src={"/static/icons/" + file}
-          alt={name}
-          className="h-6 w-6 sm:h-8 sm:w-8"
-          title={name + "logo"}
-        />
+        <div className="relative w-6 h-6 sm:h-8 sm:w-8">
+          <Image
+            src={"/static/icons/" + file}
+            alt={name}
+            title={name + "logo"}
+            layout="fill"
+          />
+        </div>
       </div>
       <p className="text-xs opacity-75">{name}</p>
     </div>

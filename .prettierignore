@@ -1,4 +1,3 @@
-src/.next
-src/out
 .next
+out
 coverage

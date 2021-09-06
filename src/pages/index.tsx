@@ -2,6 +2,7 @@ import React from "react";
 import Page from "components/layout/Page";
 import Icon from "components/base/Icon";
 import LinkButton from "components/base/LinkButton";
+import Image from "next/image";
 
 const icons = [
   { name: "React.js", file: "react-icon.svg" },
@@ -19,12 +20,9 @@ const icons = [
 
 const Index = () => (
   <Page className="flex flex-col items-center justify-center mt-16 sm:pt-24 lg:pb-4 sm:my-auto">
-    <img
-      id="next-logo"
-      src="/static/icons/nextjs-icon.svg"
-      className="relative h-32 md:h-48"
-      alt="next.js logo"
-    />
+    <div className="relative w-full h-32 md:h-48">
+      <Image src="/static/icons/nextjs-icon.svg" alt="next.js logo" layout="fill" />
+    </div>
 
     <h2 className="mt-4 text-xl font-semibold sm:text-3xl">
       Full-featured template for JAMstack websites.
