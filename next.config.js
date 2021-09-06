@@ -9,10 +9,10 @@ const nextConfig = {
   exportPathMap: function () {
     return {
       "/": { page: "/" },
-      docs: {
+      "/docs": {
         page: "/docs"
       },
-      contact: {
+      "/contact": {
         page: "/contact"
       }
     };
