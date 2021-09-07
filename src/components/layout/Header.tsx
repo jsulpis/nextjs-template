@@ -31,8 +31,8 @@ function Header() {
           </button>
         </div>
         <div
-          className={`flex overflow-hidden transition-height duration-300 md:h-auto ${
-            isCollapsed ? "h-0" : "h-24"
+          className={`flex overflow-hidden md:overflow-visible transition-height duration-300 md:h-auto ${
+            isCollapsed ? "h-0" : "h-16"
           } `}
           id="list-mobile"
         >
