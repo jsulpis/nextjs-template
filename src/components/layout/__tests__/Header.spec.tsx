@@ -14,6 +14,6 @@ describe("Header", () => {
     fireEvent.click(container.querySelector("button"));
 
     // Then
-    expect(container.querySelector("#list-mobile").classList).toContain("h-24");
+    expect(container.querySelector("#list-mobile").classList).toContain("h-16");
   });
 });
