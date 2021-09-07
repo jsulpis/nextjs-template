@@ -1,6 +1,5 @@
 import NextHead from "next/head";
 import { useRouter } from "next/router";
-import React from "react";
 
 const rootURL = process.env.NEXT_PUBLIC_ROOT_URL;
 const defaultDescription = "Full-featured template for next.js applications.";

@@ -1,4 +1,3 @@
-import React from "react";
 import Page from "components/layout/Page";
 import Icon from "components/base/Icon";
 import LinkButton from "components/base/LinkButton";
