@@ -1,5 +1,5 @@
 .btn {
-  @apply px-6 py-3 rounded shadow outline-none text-sm uppercase;
+  @apply px-6 py-3 rounded shadow text-sm uppercase;
 
   &-primary {
     @apply bg-primary-500 text-white;
@@ -15,9 +15,5 @@
     &:hover {
       @apply bg-gray-600;
     }
-  }
-
-  &:focus {
-    @apply outline-none;
   }
 }

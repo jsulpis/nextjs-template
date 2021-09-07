@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import React from "react";
 import Docs from "pages/docs";
 import * as router from "next/router";
 
