@@ -1,6 +1,7 @@
 <h1 align="center">Next.js Template</h1>
 <h3 align="center">Full-featured template for JAMstack websites using next.js</h3>
-<p align="center">
+
+<div align="center">
 	<a href="https://github.com/jsulpis/nextjs-template/actions/workflows/build.yml">
 		<img alt="Build Status" src="https://github.com/jsulpis/nextjs-template/actions/workflows/build.yml/badge.svg" />
 	</a>
@@ -13,11 +14,11 @@
   <a href="http://makeapullrequest.com">
 		<img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" />
 	</a>
-</p>
-
-<a align="center" href="https://nextjs-template.juliensulpis.vercel.app">
-  <img class="repo-preview" src="https://raw.githubusercontent.com/jsulpis/nextjs-template/master/preview.png" alt="Screenshot image"/>
-</a>
+  <a href="https://nextjs-template.juliensulpis.vercel.app">
+    <img class="repo-preview" src="https://raw.githubusercontent.com/jsulpis/nextjs-template/main/preview.png" alt="Screenshot image"/>
+  </a>
+  <p>Picture generated with my <a href="https://website-screenshot.vercel.app/">Website Screenshot</a> app.</p>
+</div>
 
 **Deploy your own copy of this project in just a few clicks on Vercel:**
 
@@ -29,23 +30,25 @@ I built this template with all the tools I found useful to develop my own person
 
 ## Features
 
-**React.js + TypeScript**
+**React.js with TypeScript**
 
-- Because I love strongly typed languages (I'm a bit of a java developer at heart)
+- Because I love strongly typed languages
 
-**Linting**
+**Lint & format**
 
-- Don't bother with linting ever again. Let Prettier handle it for you. Pre-commit hook included to lint your staged files.
+- ESLint
+- Prettier
+- Pre-commit hook included to lint your staged files.
 
 **Testing Setup**
 
-- Unit tests with Jest
-- Using the React Testing Library to make tests that mimic real user interactions
+- Jest
+- React Testing Library to make tests that mimic real user interactions
 
 **UI**
 
-- Leverage the power of Tailwind CSS to build beautiful interfaces. You will find a Tailwind config file that you can customize to build your own theme.
-- You can also use conventional scss files.
+- TailwindCSS 2
+- CSS modules are also supported by default by next.js
 
 **APIs**
 
@@ -57,16 +60,15 @@ I built this template with all the tools I found useful to develop my own person
 
 **Deployment**
 
-- Example of CI with Travis-CI
+- CI with GitHub Actions
 - Ready to deploy on Vercel using git integration or the command line (see 'deployment' section below)
-- Google global site tag (gtag.js) for sending data to Google Analytics
 
 ## Installation
 
 Clone the repository and install the dependencies:
 
 ```shell
-git clone https://github.com/jsulpis/nextjs-template.git && cd nextjs-template && npm i
+git clone https://github.com/jsulpis/nextjs-template.git && cd nextjs-template && yarn install
 ```
 
 ## Usage
@@ -90,7 +92,7 @@ yarn build
 Launch a server for server-side rendering (after building the application):
 
 ```
-npm start
+yarn start
 ```
 
 Generate a fully static project with pre-rendered pages to put directly on a server or any static website hosting platform. Note that you lose the possibility to have server-side rendered pages. With Vercel you should not have to run this command.
@@ -105,14 +107,16 @@ This template is ready to be deployed on Vercel:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/jsulpis/nextjs-template)
 
-**Important:** Because of the custom folder architecture, you have to change the default build command from `yarn build` to `yarn build:now`.
-
-Then you can integrate Vercel with your GitHub account, which will allow it to deploy each branch and pull request to their own environment, and the master branch in production.
+You can integrate Vercel with your GitHub account, which allows it to deploy each branch and pull request to their own environment, and the main branch in production.
 
 ## Configuration
 
 See the [documentation page](https://nextjs-template.juliensulpis.vercel.app/docs)
 
+## What next ?
+
+If you don't find what you are looking for in this template, there is a good chance that one of the [many examples](https://github.com/vercel/next.js/tree/canary/examples) provided by Vercel will make you happy !
+
 ## License
 
-Released under the [MIT](https://github.com/jsulpis/nextjs-template/blob/master/LICENSE) license.
+Released under the [MIT](https://github.com/jsulpis/nextjs-template/blob/main/LICENSE) license.
