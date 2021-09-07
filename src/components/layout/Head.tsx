@@ -24,7 +24,7 @@ const Head = (props: HeadProps) => {
       <title>{props.title || defaultTitle}</title>
       <meta name="description" content={props.description || defaultDescription} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/static/favicon.ico" />
+      <link rel="icon" href="/static/favicon.png" />
       <meta property="og:url" content={props.url || defaultOGURL} />
       <meta property="og:title" content={props.title || defaultTitle} />
       <meta property="og:description" content={props.description || defaultDescription} />
