@@ -15,11 +15,16 @@ const Docs = () => (
         <DocLi>
           <div className="inline-flex flex-col w-10/12 lg:w-3/4">
             <p className="opacity-100">
-              Clone the repository and install the dependencies:
+              Clone the repository and install the dependencies <br />
+              (you may want to{" "}
+              <DocLink href="https://github.com/jsulpis/nextjs-template/fork">
+                fork
+              </DocLink>{" "}
+              the project before, to have your own copy):
             </p>
             <CodeBlock className="mt-1">
               git clone https://github.com/jsulpis/nextjs-template.git && cd
-              nextjs-template && npm i
+              nextjs-template && yarn install
             </CodeBlock>
           </div>
         </DocLi>
@@ -40,114 +45,41 @@ const Docs = () => (
         </DocLi>
       </DocUl>
 
-      <h4>Purge CSS</h4>
-      <DocUl>
-        <DocLi>
-          This plugin will delete all unused CSS in the final bundle and dramatically
-          reduce its size, but it comes with a few constraints. For example you will lose
-          the css classes that you build dynamically using string concatenation if you
-          don&apos;t use some tricks.
-        </DocLi>
-        <DocLi>
-          This{" "}
-          <DocLink href="https://www.viget.com/articles/a-better-approach-for-using-purgecss-with-tailwind/">
-            article
-          </DocLink>{" "}
-          provides some solutions to common issues when working with Purge CSS.
-        </DocLi>
-      </DocUl>
-
       <h4>SonarCloud</h4>
       <DocUl>
-        <DocLi>Create a new project on SonarCloud and note the generated token.</DocLi>
+        <DocLi>
+          Create a new project on{" "}
+          <DocLink href="https://sonarcloud.io">SonarCloud</DocLink> and note the
+          generated token.
+        </DocLi>
         <DocLi>
           Update the project description in <FileName>sonar-project.properties</FileName>.
         </DocLi>
         <DocLi>
-          See the Travis CI configuration below to trigger the analysis during the build.
-        </DocLi>
-      </DocUl>
-
-      <h4>Travis CI</h4>
-      <DocUl>
-        <DocLi>
-          Activate your repository in your Travis CI settings to trigger the builds on git
-          push.
-        </DocLi>
-        <DocLi>
-          In the repository settings, add an environment variable called{" "}
-          <FileName>SONAR_TOKEN</FileName> and paste it the token you got when creating
-          the project on SonarCloud.
-        </DocLi>
-        <DocLi>
-          Change the sonarcloud organization in <FileName>.travis.yml</FileName>.
-        </DocLi>
-        <DocLi>
-          You should now have your pull requests analyzed and get checks from Travis CI
-          and SonarCloud.
-        </DocLi>
-      </DocUl>
-
-      <h4>Google Analytics</h4>
-      <DocUl>
-        <DocLi>
-          Register your website in your{" "}
-          <DocLink href="https://analytics.google.com/analytics/web">
-            Google Analytics dashboard
-          </DocLink>{" "}
-          and note its Tracking ID.
-        </DocLi>
-        <DocLi>
-          Create an environment variable called GA_TRACKING_ID with your new id. See the
-          instructions below to setup variables on Vercel.
+          The Sonar Scanner is set up to run in the GitHub Actions workflow. You just need
+          to add a <FileName>SONAR_TOKEN</FileName> secret in your GitHub repository (
+          <FileName>Settings&nbsp;&gt;&nbsp;Secrets</FileName>) with the token generated
+          in SonarCloud.
         </DocLi>
       </DocUl>
 
       <h3>Deployment</h3>
       <p>
-        The template is ready to be deployed on{" "}
-        <DocLink href="https://vercel.com/docs">Vercel</DocLink> so the following
-        instructions target this platform. Of course you can easily deploy it with any
-        other cloud platform like{" "}
+        This template is ready to be deployed on{" "}
+        <DocLink href="https://vercel.com/docs">Vercel</DocLink> : just connect it to your
+        GitHub repository and let it deploy it. The deployement should also be fairly
+        straightforward with any other cloud platform like{" "}
         <DocLink href="https://www.netlify.com/">Netlify</DocLink>.
       </p>
 
       <h4>Environment variables</h4>
       <p>
-        This project uses two environment variables that you can set in your project
-        settings on Vercel:
+        This project uses the <FileName>NEXT_PUBLIC_ROOT_URL</FileName> environment
+        variable in several meta tags. This variable refers to the deploy url of your
+        application. A value is given in the <FileName>.env.production</FileName> file,
+        which you may want to update with your url. You can also set this variable in the
+        settings of your project on Vercel.
       </p>
-      <DocUl>
-        <DocLi>GA_TRACKING_ID should contain your Google Analytics Tracker ID</DocLi>
-        <DocLi>
-          APP_URL is the deploy url of your application. It is used in the social networks
-          meta tags.
-        </DocLi>
-      </DocUl>
-      <p>
-        Note that Vercel allows you to set variables for each environment (production,
-        preview and development) so you can for instance set the Analytics variable only
-        in production to avoid polluting the analytics during the development.
-      </p>
-
-      <h4>Deployment script</h4>
-      <p>
-        The source files of the template are gathered in a <FileName>src</FileName> folder
-        for clarity. Since this is not the default file structure for next.js projects, we
-        need to update the deployment script in Vercel.
-      </p>
-      <DocUl>
-        <DocLi>
-          <div className="inline-flex flex-col w-10/12 lg:w-3/4">
-            <p className="opacity-100">
-              In your Vercel dashboard, go to your project settings, and override the
-              build command with:
-            </p>
-            <CodeBlock className="mt-1 opacity-100">npm run build:now</CodeBlock>
-            You can leave the other default settings.
-          </div>
-        </DocLi>
-      </DocUl>
     </div>
   </Page>
 );
@@ -172,4 +104,5 @@ const DocLink = (props: PropsWithChildren<HTMLProps<HTMLLinkElement>>) => (
 const FileName = (props: PropsWithChildren<{}>) => (
   <span className="font-mono text-sm">{props.children}</span>
 );
+
 export default Docs;
